@@ -1,0 +1,26 @@
+[
+  {
+    "id": "chair",
+    "title": "Reposition a chair",
+    "duration": 8.666666666666666,
+    "metadata": "/motion/chair.json",
+    "video": "/motion/chair.mp4",
+    "poster": "/motion/chair.jpg"
+  },
+  {
+    "id": "floor",
+    "title": "Collect objects from the floor",
+    "duration": 9.0,
+    "metadata": "/motion/floor.json",
+    "video": "/motion/floor.mp4",
+    "poster": "/motion/floor.jpg"
+  },
+  {
+    "id": "cart",
+    "title": "Push a cart",
+    "duration": 10.0,
+    "metadata": "/motion/cart.json",
+    "video": "/motion/cart.mp4",
+    "poster": "/motion/cart.jpg"
+  }
+]

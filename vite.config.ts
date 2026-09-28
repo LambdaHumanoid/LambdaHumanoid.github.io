@@ -47,7 +47,7 @@ export default defineConfig(async () => {
     server: {
       watch: {
         // Offline fitting/exports are gigabytes of data, not app source.
-        ignored: ["**/work/**", "**/.wrangler/**"],
+        ignored: ["**/work/**", "**/.wrangler/**", "**/offline-site/**"],
         ...(isCodexSeatbeltSandbox ? { useFsEvents: false, usePolling: true } : {}),
       },
     },

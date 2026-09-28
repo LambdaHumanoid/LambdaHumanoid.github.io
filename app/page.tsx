@@ -2,7 +2,6 @@ import { DemoPlayer } from "./DemoPlayer";
 import { ScalingAnimation } from "./ScalingAnimation";
 import { LambdaMark } from "./LambdaMark";
 import { HeroMotion } from "./HeroMotion";
-import { HumanVerseAnimation } from "./HumanVerseAnimation";
 import { PageTransitions } from "./PageTransitions";
 import { ablations, demoScenes, results, type DemoVideo } from "./research";
 
@@ -78,20 +77,19 @@ export default function Home() {
         <article><strong>80.4<span>%</span></strong><span>average real-world task progress</span></article>
       </section>
       <section className="content-section demos-section" id="demos">
-        <div className="section-intro"><div><p className="section-label">Real-world demonstrations</p><h2>Move. Reach. Manipulate.</h2></div><p>Loco-manipulation demonstrations in laboratory and break room environments.</p></div>
-        {demoScenes.map(scene => (
-          <section className="demo-scene" key={scene.id} aria-labelledby={`${scene.id}-heading`}>
-            <div className="demo-scene-heading"><h3 id={`${scene.id}-heading`}>{scene.title}</h3><span>4 videos</span></div>
-            <div className={`demo-grid${scene.id === "laboratory" ? " demo-grid-laboratory" : ""}`} tabIndex={0} role="region" aria-label={`${scene.title} demonstration videos`}>
+        <div className="section-intro"><div><p className="section-label">Real-world demonstrations</p><h2>Move. Reach. Manipulate.</h2></div><p>Four real-world loco-manipulation demonstrations.</p></div>
+        {demoScenes.filter(scene => scene.videos.some(video => video.videoSrc)).map(scene => (
+          <section className="demo-scene" key={scene.id} aria-label="Real-world demonstration videos">
+            <div className={`demo-grid${scene.id === "laboratory" ? " demo-grid-laboratory" : ""}`} tabIndex={0} role="region" aria-label="Real-world demonstration videos">
               {scene.videos.map((video, index) => <Demo key={video.id} video={video} scene={scene.title} index={index} />)}
             </div>
           </section>
         ))}
-        <details className="research-details"><summary>Robot hardware and evaluation scenes</summary><p>The Unitree G1 uses BrainCo Revo 2 hands and a head-mounted GoPro. PICO body tracking and HexaCercle M11 gloves provide teleoperation demonstrations, with SONIC translating whole-body motion into robot control.</p><PaperFigure name="evaluation" width={2400} height={816} alt="Teleoperation hardware, four real-world task sequences, and evaluation objects" caption="The paper’s hardware setup, task sequences, and robot-seen and robot-unseen objects." /></details>
+        <details className="research-details" open><summary>Robot hardware and evaluation scenes</summary><p>The Unitree G1 uses BrainCo Revo 2 hands and a head-mounted GoPro. PICO body tracking and HexaCercle M11 gloves provide teleoperation demonstrations, with SONIC translating whole-body motion into robot control.</p><PaperFigure name="evaluation" width={2400} height={816} alt="Teleoperation hardware, four real-world task sequences, and evaluation objects" caption="The paper’s hardware setup, task sequences, and robot-seen and robot-unseen objects." /></details>
       </section>
       <section className="content-section data-section" id="data">
         <div className="section-intro"><div><p className="section-label">HumanVerse-500</p><h2>Capture the body.<br />Keep the context.</h2></div><p>500 hours of mobile human activity, collected with portable sensors in everyday spaces. Visual observations stay aligned with whole-body and hand motion.</p></div>
-        <HumanVerseAnimation />
+        <PaperFigure name="humanverse" width={3200} height={1247} alt="HumanVerse-500: wearable capture setup, skill frequencies, five-ring activity distribution, and synchronized image–pose examples" caption="HumanVerse-500 spans everyday scenes, objects, and coordinated whole-body activities." />
         <div className="dataset-motion"><HeroMotion /></div>
           <div className="dataset-motion dataset-retargeting"><HeroMotion comparison /></div>
         <div className="modality-columns"><article><h3>Egocentric vision</h3><p>A chest-mounted GoPro records first-person RGB, retaining the objects and surroundings that give actions their context.</p></article><article><h3>24 body joints</h3><p>Wearable PICO tracking captures global displacement, posture, and coordinated body motion on a synchronized timeline.</p></article><article><h3>21 joints per hand</h3><p>Image-based hand reconstruction estimates articulated hand geometry, complementing directly tracked body motion.</p></article></div>

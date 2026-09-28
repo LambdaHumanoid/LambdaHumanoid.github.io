@@ -236,7 +236,7 @@ python scripts/prepare-gmr-source.py
 # Upload *.human.npz and run-gmr-sonic.py into the isolated remote task directory.
 # That directory contains upstream GMR core/assets and the existing pipeline/.
 # Run run-gmr-sonic.py --work TASK_DIR --sonic GR00T_REPO with gr00t_wbc Python.
-ssh primus1 '/primus_xpfs_workspace_T04/xcy/miniforge3/envs/gr00t_wbc/bin/python - --rollout-dir /primus_xpfs_workspace_T04/xcy/tmp/iclr27-gmr-sonic-20260925' \
+ssh primus1 '/primus_xpfs_workspace_T04/xcy/miniforge3/envs/gr00t_wbc/bin/python - --rollout-dir /path/to/sonic-rollouts' \
   < scripts/export-g1-source.py > work/gmr-sonic/g1-fk.npz
 # Copy provenance.json and the private *.gmr.npz / *.sonic.npz results locally.
 python scripts/export-robot-motion.py --gmr-sonic work/gmr-sonic

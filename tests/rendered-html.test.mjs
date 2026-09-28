@@ -25,15 +25,16 @@ test("server-renders the research project page", async () => {
   assert.match(html, /Towards a General Humanoid/);
   assert.match(html, /HumanVerse-500/);
   assert.match(html, /Read the paper/);
-  assert.equal((html.match(/class="demo-scene"/g) ?? []).length, 2);
-  assert.equal((html.match(/class="demo-video"/g) ?? []).length, 8);
-  assert.equal((html.match(/Video coming soon/g) ?? []).length, 4);
-  for (const scene of ["laboratory", "break-room"]) {
-    assert.match(html, new RegExp(`id="${scene}-heading"`));
+  assert.equal((html.match(/class="demo-scene"/g) ?? []).length, 1);
+  assert.equal((html.match(/class="demo-video"/g) ?? []).length, 4);
+  assert.equal((html.match(/Video coming soon/g) ?? []).length, 0);
+  for (const scene of ["laboratory"]) {
     for (let index = 1; index <= 4; index++) {
       assert.equal((html.match(new RegExp(`id="${scene}-0${index}"`, "g")) ?? []).length, 1);
     }
   }
+  assert.doesNotMatch(html, /break-room-heading|id="break-room-/);
+  assert.match(html, /<details class="research-details" open=""/);
   assert.doesNotMatch(html, /src=""/);
   assert.match(html, /HumanVerse in motion/);
   assert.match(html, new RegExp(`Choose from ${gallery.length} human recordings`));
@@ -54,8 +55,8 @@ test("server-renders the research project page", async () => {
   assert.match(html, /Scaling animation controls/);
   assert.match(html, /Scaling animation timeline/);
   assert.match(html, /Human-data scaling: validation loss/);
-  assert.match(html, /HumanVerse animation controls/);
-  assert.match(html, /Replay dataset animation/);
+  assert.doesNotMatch(html, /HumanVerse animation controls/);
+  assert.doesNotMatch(html, /humanverse-animated\.svg/);
   assert.match(html, /src="\/figures\/humanverse.webp"/);
   assert.doesNotMatch(html, /Human experience → humanoid control/);
 

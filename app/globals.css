@@ -9,7 +9,7 @@
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
 #main { isolation: isolate; }
 .ambient-waves { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; contain: strict; }
@@ -212,8 +212,6 @@ p { margin-top: 0; }
 .endpoint-comparison small { font-size: 22px; }
 .endpoint-comparison .endpoint-gain { color: var(--purple); border-bottom: 1px solid #bfb0d0; padding-bottom: 3px; }
 .closing { position: relative; min-height: 440px; overflow: hidden; background: var(--paper); }
-.closing::after { content: "λ₀"; position: absolute; right: .05em; bottom: -.28em; color: #bda5df24; font: italic 700 min(46vw,605px)/1 var(--serif); pointer-events: none; }
-.closing::after { background: linear-gradient(125deg, #91abc824 0%, #a0a4d528 28%, #b5a4dc30 52%, #a08bd328 76%, #8872c724 100%); background-clip: text; -webkit-background-clip: text; color: transparent; }
 .closing-copy { max-width: none; color: var(--muted); margin: 24px 0; }
 footer { min-height: 96px; padding: 24px max(var(--page-gutter),calc((100vw - var(--page-max)) / 2)); display: flex; justify-content: space-between; gap: 24px; align-items: center; border-top: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: 12px; }
 .footer-brand { display: inline-flex; align-items: center; gap: 7px; min-width: 0; }

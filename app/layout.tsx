@@ -1,5 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+
+// Fit the desktop composition to phone screens; retain native pinch zoom.
+export const viewport: Viewport = {
+  width: 1440,
+  initialScale: undefined,
+  userScalable: true,
+};
 
 export const metadata: Metadata = {
   title: "Scaling Egocentric Human Data for General Humanoid Control",

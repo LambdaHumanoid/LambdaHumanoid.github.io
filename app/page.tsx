@@ -56,7 +56,6 @@ export default function Home() {
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
           <h1><span className="sr-only">λ₀: </span><span className="hero-title">Scaling Egocentric Human Data for General Humanoid Control</span></h1>
-          <p className="hero-lede">Learning to move and manipulate from human experience. λ₀ transfers egocentric whole-body activity into coordinated locomotion, posture, and dexterous interaction on a humanoid robot.</p>
           <div className="hero-actions"><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
         </div>
       </section>
@@ -65,12 +64,6 @@ export default function Home() {
         <div className="thesis-grid"><h2><span>Human experience.</span><span>Whole-body intelligence.</span></h2><div><p>Diverse human activities reveal how locomotion, posture, and dexterous hand movements work together across varied scenes, objects, and interaction contexts. Stepping closer, bending to reach, and maintaining balance during contact offer rich, naturally occurring examples of whole-body coordination.</p></div></div>
         <p className="overview-summary"><strong>λ₀ builds on diverse human experience.</strong> <strong className="overview-dataset-name">HumanVerse-500</strong> captures everyday activities through synchronized egocentric vision, body motion, and hand motion, preserving the coordination between locomotion, posture, and dexterous interaction. Our three-stage training recipe learns general whole-body priors from these human activities, then acquires manipulation-specific biases through robot demonstrations.</p>
         <p className="overview-takeaway"><span className="overview-takeaway-label">Core idea:</span> we learn whole-body priors from diverse human data, then manipulation-specific biases from robot demonstrations.</p>
-      </section>
-      <section className="facts" aria-label="Research at a glance">
-        <article><strong>500<span>h</span></strong><span>whole-body human activity</span></article>
-        <article><strong>3</strong><span>training stages from interaction to control</span></article>
-        <article><strong>4</strong><span>real-world loco-manipulation tasks</span></article>
-        <article><strong>80.4<span>%</span></strong><span>average real-world task progress</span></article>
       </section>
       <section className="content-section demos-section" id="demos">
         <div className="section-intro"><div><p className="section-label">Real-world demonstrations</p><h2>Move. Reach. Manipulate.</h2></div><p>Whole-body loco-manipulation across the laboratory, break room, and visitor center.</p></div>
@@ -82,7 +75,6 @@ export default function Home() {
             </div>
           </section>
         ))}
-        <details className="research-details" open><summary>Robot hardware and evaluation scenes</summary><p>The Unitree G1 uses BrainCo Revo 2 hands and a head-mounted GoPro. PICO body tracking and HexaCercle M11 gloves provide teleoperation demonstrations, with SONIC translating whole-body motion into robot control.</p><PaperFigure name="evaluation" width={2400} height={816} alt="Teleoperation hardware, four real-world task sequences, and evaluation objects" caption="The paper’s hardware setup, task sequences, and robot-seen and robot-unseen objects." /></details>
       </section>
       <section className="content-section data-section" id="data">
         <div className="section-intro"><div><p className="section-label">HumanVerse-500</p><h2>Capture the body.<br />Keep the context.</h2></div><p>500 hours of mobile human activity, collected with portable sensors in everyday spaces. Visual observations stay aligned with whole-body and hand motion.</p></div>
@@ -100,6 +92,7 @@ export default function Home() {
       </section>
       <section className="content-section results-section" id="evaluation">
         <div className="section-intro"><div><p className="section-label">Evaluation results</p><h2>Coordinated action.<br />Measurable progress.</h2></div><p>We report both completed tasks and milestone-weighted progress. The two metrics distinguish terminal success from useful partial execution.</p></div>
+        <details className="research-details" open><summary>Robot hardware and evaluation scenes</summary><p>The Unitree G1 uses BrainCo Revo 2 hands and a head-mounted GoPro. PICO body tracking and HexaCercle M11 gloves provide teleoperation demonstrations, with SONIC translating whole-body motion into robot control.</p><PaperFigure name="evaluation" width={2400} height={816} alt="Teleoperation hardware, four real-world task sequences, and evaluation objects" caption="The paper’s hardware setup, task sequences, and robot-seen and robot-unseen objects." /></details>
         <div className="result-highlights"><article><strong>62.5<span>%</span></strong><h3>Real-world success</h3><p>25 of 40 trials completed; +22.5 percentage points over the strongest external baseline.</p></article><article><strong>80.4<span>%</span></strong><h3>Real-world progress</h3><p>Average over four tasks; +25.8 percentage points over the strongest external baseline.</p></article><article><strong>90.0<span>%</span></strong><h3>SIMPLE success</h3><p>Six core tasks, three difficulty levels, 180 trials. Uses the best recorded configuration per task.</p></article></div>
         <div className="comparison-heading"><h3>Real-world comparison</h3><p>Higher is better · four tasks, 40 trials per method</p></div>
         <div className="table-scroll" tabIndex={0} role="region" aria-label="Real-world results table"><table className="results-table"><caption className="sr-only">Real-world success and task progress</caption><thead><tr><th scope="col">Method</th><th scope="col">Success (%)</th><th scope="col">Task progress (%)</th></tr></thead><tbody>{results.map(row => <tr key={row.name} className={row.name === "λ₀ (Ours)" ? "ours" : undefined}><th scope="row">{row.name}</th>{(["success", "progress"] as const).map(metric => <td key={metric}><div className={`metric-cell ${metric}`}><span className="metric-track" aria-hidden="true"><i style={{ width: `${row[metric]}%` }} /></span><strong>{row[metric].toFixed(1)}</strong></div></td>)}</tr>)}</tbody></table></div>

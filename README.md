@@ -1,7 +1,6 @@
 # λ₀ / HumanVerse-500 project page
 
-Research website for **Towards a General Humanoid Loco-Manipulation Model via
-Egocentric Whole-Body Human Data Pretraining**.
+Research website for **Scaling Egocentric Human Data for General Humanoid Control**.
 
 ## View the offline page
 

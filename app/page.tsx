@@ -55,7 +55,7 @@ export default function Home() {
       <section className="hero" id="top">
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
-          <h1><span className="sr-only">λ₀: </span><span className="hero-title">Towards a General Humanoid Loco-Manipulation Model</span><span className="hero-subtitle">via Egocentric Whole-Body Human Data Pretraining</span></h1>
+          <h1><span className="sr-only">λ₀: </span><span className="hero-title">Scaling Egocentric Human Data for General Humanoid Control</span></h1>
           <p className="hero-lede">Learning to move and manipulate from human experience. λ₀ transfers egocentric whole-body activity into coordinated locomotion, posture, and dexterous interaction on a humanoid robot.</p>
           <div className="hero-actions"><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
         </div>

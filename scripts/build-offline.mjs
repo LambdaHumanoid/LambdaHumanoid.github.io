@@ -75,6 +75,7 @@ for(const name of required) {
 }
 }
 const entry=path.join(target,'index.html');
+await fs.copyFile(path.join(root, 'public/favicon.svg'), path.join(target, 'favicon.svg'));
 const { default: server } = await import(pathToFileURL(path.join(root, 'dist/server/index.js')).href);
 const response = await server.fetch(
   new Request('http://localhost/', { headers: { accept: 'text/html' } }),
@@ -93,5 +94,5 @@ for (const name of ['packed-codec.js', 'shared.js', 'page.js']) {
   try { await fs.access(path.join(offline, name)); scripts.push(`<script defer src="./offline/${name}"></script>`); } catch { /* Raw asset builds do not need packing helpers. */ }
 }
 await fs.writeFile(entry, `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Lambda-zero learns humanoid loco-manipulation from diverse human experience and robot demonstrations."><title>λ₀ · HumanVerse-500</title><link rel="stylesheet" href="./offline/page.css"></head><body><div id="offline-root">${fallback}</div>${scripts.join('')}</body></html>\n`);
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Lambda-zero learns humanoid loco-manipulation from diverse human experience and robot demonstrations."><title>λ₀: Scaling Egocentric Human Data for General Humanoid Control</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./offline/page.css"></head><body><div id="offline-root">${fallback}</div>${scripts.join('')}</body></html>\n`);
 console.log(JSON.stringify({ target, bundleOnly, assetCount, assetMB: Math.round(assetBytes / 1024 / 1024) }));

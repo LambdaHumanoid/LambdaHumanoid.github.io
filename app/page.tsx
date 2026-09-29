@@ -51,13 +51,12 @@ export default function Home() {
       <header className="site-header">
         <a className="brand lambda" href="#top" aria-label="Lambda zero home"><LambdaMark /></a>
         <nav aria-label="Primary navigation"><a href="#overview">Overview</a><a href="#demos">Demos</a><a href="#data">Data</a><a href="#training">Method</a><a href="#evaluation">Results</a></nav>
-        <a className="paper-link" href="/paper.pdf" target="_blank" rel="noreferrer">Report <span aria-hidden="true">↗</span></a>
       </header>
       <section className="hero" id="top">
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
           <h1><span className="sr-only">λ₀: </span><span className="hero-title">Scaling Egocentric Human Data for General Humanoid Control</span></h1>
-          <div className="hero-actions"><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
+          <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
         </div>
       </section>
       <section className="thesis" id="overview">

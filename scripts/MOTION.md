@@ -1,7 +1,7 @@
 # Recorded human / G1 motion viewers
 
 The first viewer, **HumanVerse in motion**, sits below the dataset figure and shows
-40 selectable SMPL + MANO recordings with a chest-camera wireframe and synchronized GoPro RGB.
+60 selectable SMPL + MANO recordings with a chest-camera wireframe and synchronized GoPro RGB.
 The gallery covers collections `v1_0729`, `v1_0730`, `v1_0828` and `v1_0901`.
 The human gallery uses `public/motion/gallery.json`; the three existing G1 comparisons
 use their separate `public/motion/clips.json` manifest.
@@ -21,7 +21,7 @@ and hidden tabs skip speculation. A native video remains available on failure.
 ## Human gallery: SMPL body + native MANO hands
 
 `export-smpl-mano-gallery.py` replaces the former 21-keypoint-to-SMPL-X fitting
-pipeline for all 40 gallery clips. The three older G1 comparison human clips still
+pipeline for all 60 gallery clips. The three older G1 comparison human clips still
 use the existing SMPL-X export; their robot rollouts and timing are unchanged.
 
 - PICO's 24 global quaternions drive a neutral-shape SMPL body through the existing
@@ -92,7 +92,7 @@ The browser interpolates baked 15 Hz meshes (plus the final source frame), quant
 at 0.1 mm. It retains visual foot grounding and the illustrative camera. There is no
 hand/body collision correction or arm IK in this gallery export; raw tracking,
 independent body/hand proportions, and wrist attachment can produce intersections.
-The 40 source windows contain 60–222 frames (approximately 2–7.4 seconds), all
+The 60 source windows contain 60–240 frames (approximately 2–8 seconds), all
 with valid body tracking and valid & visible observations for both hands at 30 Hz.
 These flags measure availability, not accuracy; PICO hand-active counts are separate.
 
@@ -126,6 +126,10 @@ the private SMPL/MANO paths. Selection rows include `collection` (default `v1_07
 `--manifest` selects the input task list for fetch/build/publish. `--prepare-only` prepares metadata/video/posters. `--out` supports staging all assets
 before publication; `--prepared-videos` accepts pretrimmed, frame-aligned videos and
 posters. Each build recomputes continuity checks from the local source archives.
+After merging the staged manifest into `public/motion/gallery.json`, run
+`python scripts/pack-gallery-clips.py --manifest <new-clips.json>` to add the new
+standalone assets, then `npm run build:offline`. Packing verifies an exact mesh
+round trip and leaves existing packed recordings unchanged.
 `tests/motion-gallery.test.mjs` independently checks edge incidence/winding, vertex
 counts, provenance, coverage, bounds, neutral bone lengths, raw continuity metrics and the exact selected RGB frame counts.
 

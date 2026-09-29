@@ -30,7 +30,7 @@ test('offline page has local resources, nine demos, and neutral project branding
   }
 });
 
-test('packed offline recording restores the original metadata and every mesh coordinate', async () => {
+test('all packed offline recordings restore original metadata and every mesh coordinate', async () => {
   const delivered = new Map();
   const context = vm.createContext({
     atob, btoa, Uint8Array, Uint16Array, Uint32Array, Float32Array, DataView, TextDecoder, TextEncoder,
@@ -39,16 +39,19 @@ test('packed offline recording restores the original metadata and every mesh coo
   for (const asset of ['offline/packed-codec.js', 'offline/shared.js']) {
     vm.runInContext(await readFile(new URL(asset, root), 'utf8'), context);
   }
-  const [clip] = JSON.parse(await readFile(new URL('../public/motion/gallery.json', import.meta.url), 'utf8'));
-  const metadataKey = `motion/${clip.id}.json`;
-  vm.runInContext(await readFile(new URL(`offline/assets/motion--${clip.id}.json.js`, root), 'utf8'), context);
-  const original = JSON.parse(await readFile(new URL(`../public/${metadataKey}`, import.meta.url), 'utf8'));
-  const restored = JSON.parse(delivered.get(metadataKey));
-  assert.deepEqual(restored, original);
-  const key = original.vertices.replace(/^\//, '');
-  vm.runInContext(await readFile(new URL(`offline/assets/${key.replaceAll('/', '--')}.js`, root), 'utf8'), context);
-  const expected = gunzipSync(await readFile(new URL(`../public/${key}`, import.meta.url)));
-  assert.deepEqual(delivered.get(key), expected);
+  const clips = JSON.parse(await readFile(new URL('../public/motion/gallery.json', import.meta.url), 'utf8'));
+  for (const clip of clips) {
+    const metadataKey = `motion/${clip.id}.json`;
+    vm.runInContext(await readFile(new URL(`offline/assets/motion--${clip.id}.json.js`, root), 'utf8'), context);
+    const original = JSON.parse(await readFile(new URL(`../public/${metadataKey}`, import.meta.url), 'utf8'));
+    const restored = JSON.parse(delivered.get(metadataKey));
+    assert.deepEqual(restored, original);
+    const key = original.vertices.replace(/^\//, '');
+    vm.runInContext(await readFile(new URL(`offline/assets/${key.replaceAll('/', '--')}.js`, root), 'utf8'), context);
+    const expected = gunzipSync(await readFile(new URL(`../public/${key}`, import.meta.url)));
+    assert.deepEqual(delivered.get(key), expected, clip.id);
+    delivered.clear();
+  }
 });
 
 test('every listed recording has an offline poster, video, metadata and mesh', async () => {

@@ -2728,5 +2728,1475 @@
       ],
       "maxRootAccelerationMetersPerFrameSquared": 0.008835129508438039
     }
+  },
+  {
+    "id": "capture-0730-206",
+    "title": "Connect a power bank and charging cable",
+    "duration": 5.166666666666667,
+    "metadata": "/motion/capture-0730-206.json",
+    "video": "/motion/capture-0730-206.mp4",
+    "poster": "/motion/capture-0730-206.jpg",
+    "collection": "v1_0730",
+    "episode": 206,
+    "task": "从白色盒子里找出充电宝和数据线并插上充电",
+    "handCoverage": {
+      "frameCount": 155,
+      "dynhamrValidFrames": [
+        155,
+        155
+      ],
+      "bothValidFrames": 155,
+      "picoActiveFrames": [
+        155,
+        155
+      ],
+      "bodyValidFrames": 155,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        10.490377292271825,
+        8.682340860152983,
+        3.4280791576430594
+      ],
+      "fingerDegrees": [
+        17.5967091942881,
+        17.309009203846394,
+        7.922123502113632
+      ],
+      "rootCm": [
+        3.3005755594611594,
+        3.206381567449686,
+        1.9285120833943048
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 2.843322896751125,
+      "horizontalDisplacementMeters": 2.631527416349773,
+      "ankleExcursionMeters": [
+        0.5680765647621835,
+        0.3460936736808053
+      ],
+      "footTravelMeters": [
+        4.262482092088816,
+        3.045731944095679
+      ],
+      "footHorizontalExcursionMeters": [
+        2.7248641882640756,
+        2.588274856412
+      ],
+      "footVerticalExcursionMeters": [
+        0.12064170837402344,
+        0.18377721309661865
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.018660143468179194
+    }
+  },
+  {
+    "id": "capture-0730-024",
+    "title": "Sort staples and clips into an organizer",
+    "duration": 5.166666666666667,
+    "metadata": "/motion/capture-0730-024.json",
+    "video": "/motion/capture-0730-024.mp4",
+    "poster": "/motion/capture-0730-024.jpg",
+    "collection": "v1_0730",
+    "episode": 24,
+    "task": "将桌面散乱的订书针，和大小不同的夹子放到文具收纳架的对应位置。",
+    "handCoverage": {
+      "frameCount": 155,
+      "dynhamrValidFrames": [
+        155,
+        155
+      ],
+      "bothValidFrames": 155,
+      "picoActiveFrames": [
+        155,
+        155
+      ],
+      "bodyValidFrames": 155,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        12.764880080313363,
+        12.301584480434764,
+        5.375079344627018
+      ],
+      "fingerDegrees": [
+        19.94919745865457,
+        18.852479781559282,
+        6.663255041512083
+      ],
+      "rootCm": [
+        3.7885583752202425,
+        3.537901276729657,
+        1.8401538642646127
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 2.6924592282496396,
+      "horizontalDisplacementMeters": 2.422792604562102,
+      "ankleExcursionMeters": [
+        0.6092571187020008,
+        0.5820442499247173
+      ],
+      "footTravelMeters": [
+        2.958583460733024,
+        2.889281025520819
+      ],
+      "footHorizontalExcursionMeters": [
+        2.5821222952928227,
+        2.4511922668991777
+      ],
+      "footVerticalExcursionMeters": [
+        0.12339913845062256,
+        0.13533997535705566
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.01846985345310005
+    }
+  },
+  {
+    "id": "capture-0730-029",
+    "title": "Clear paper scraps into a bin",
+    "duration": 3.7,
+    "metadata": "/motion/capture-0730-029.json",
+    "video": "/motion/capture-0730-029.mp4",
+    "poster": "/motion/capture-0730-029.jpg",
+    "collection": "v1_0730",
+    "episode": 29,
+    "task": "将白纸上的橡皮屑丢入垃圾桶，并将纸张放回原位。",
+    "handCoverage": {
+      "frameCount": 111,
+      "dynhamrValidFrames": [
+        111,
+        111
+      ],
+      "bothValidFrames": 111,
+      "picoActiveFrames": [
+        111,
+        111
+      ],
+      "bodyValidFrames": 111,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        13.76026643623406,
+        13.262677773208493,
+        5.61820592769196
+      ],
+      "fingerDegrees": [
+        15.78503040485525,
+        14.359506358084243,
+        6.563743497550517
+      ],
+      "rootCm": [
+        3.8245850554134577,
+        3.7776176071946117,
+        2.072351766814575
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 2.3627673654303227,
+      "horizontalDisplacementMeters": 2.136293334637284,
+      "ankleExcursionMeters": [
+        0.7987161410701114,
+        0.7412103198271764
+      ],
+      "footTravelMeters": [
+        2.8453723970395264,
+        2.4670402116426957
+      ],
+      "footHorizontalExcursionMeters": [
+        2.445060221708814,
+        2.038191172326137
+      ],
+      "footVerticalExcursionMeters": [
+        0.1436901092529297,
+        0.1524127721786499
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.018447986859175314
+    }
+  },
+  {
+    "id": "capture-0730-027",
+    "title": "Write on paper and put away stationery",
+    "duration": 4.166666666666667,
+    "metadata": "/motion/capture-0730-027.json",
+    "video": "/motion/capture-0730-027.mp4",
+    "poster": "/motion/capture-0730-027.jpg",
+    "collection": "v1_0730",
+    "episode": 27,
+    "task": "用铅笔在白纸上写下几个英文字母，然后将文具归位。",
+    "handCoverage": {
+      "frameCount": 125,
+      "dynhamrValidFrames": [
+        125,
+        125
+      ],
+      "bothValidFrames": 125,
+      "picoActiveFrames": [
+        125,
+        125
+      ],
+      "bodyValidFrames": 125,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        12.12086936616788,
+        11.734113022928396,
+        5.595134579901096
+      ],
+      "fingerDegrees": [
+        18.248183449713174,
+        15.796271216224596,
+        4.458517227925428
+      ],
+      "rootCm": [
+        4.524639053428218,
+        3.926985922014179,
+        1.79926306886393
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 2.306647343142767,
+      "horizontalDisplacementMeters": 1.9303845934200698,
+      "ankleExcursionMeters": [
+        0.6933279086775433,
+        0.6836520104997218
+      ],
+      "footTravelMeters": [
+        2.810317662706528,
+        2.0296800317673926
+      ],
+      "footHorizontalExcursionMeters": [
+        2.2998319616045153,
+        1.6417776143904237
+      ],
+      "footVerticalExcursionMeters": [
+        0.15246963500976562,
+        0.14212119579315186
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.018088317983670502
+    }
+  },
+  {
+    "id": "capture-0730-660",
+    "title": "Store fruit in the refrigerator",
+    "duration": 4.4,
+    "metadata": "/motion/capture-0730-660.json",
+    "video": "/motion/capture-0730-660.mp4",
+    "poster": "/motion/capture-0730-660.jpg",
+    "collection": "v1_0730",
+    "episode": 660,
+    "task": "将凳子归回桌面下方，并将桌面上的水果全部放进冰箱内",
+    "handCoverage": {
+      "frameCount": 132,
+      "dynhamrValidFrames": [
+        132,
+        132
+      ],
+      "bothValidFrames": 132,
+      "picoActiveFrames": [
+        132,
+        132
+      ],
+      "bodyValidFrames": 132,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        13.727562234624946,
+        13.095066521781916,
+        6.037538124047653
+      ],
+      "fingerDegrees": [
+        23.62059701115541,
+        21.38820655691013,
+        8.340382100047417
+      ],
+      "rootCm": [
+        3.418973021785644,
+        3.2992522095609997,
+        1.312422119878753
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.8444014944342655,
+      "horizontalDisplacementMeters": 1.4000755314641649,
+      "ankleExcursionMeters": [
+        0.5368045314008334,
+        0.5398708391208794
+      ],
+      "footTravelMeters": [
+        2.151152377682808,
+        1.9819366837098817
+      ],
+      "footHorizontalExcursionMeters": [
+        1.7205752014597184,
+        1.452144979200294
+      ],
+      "footVerticalExcursionMeters": [
+        0.1466768980026245,
+        0.11411845684051514
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.016182340064759854
+    }
+  },
+  {
+    "id": "capture-0730-329",
+    "title": "Place a plush toy behind a sign",
+    "duration": 4.733333333333333,
+    "metadata": "/motion/capture-0730-329.json",
+    "video": "/motion/capture-0730-329.mp4",
+    "poster": "/motion/capture-0730-329.jpg",
+    "collection": "v1_0730",
+    "episode": 329,
+    "task": "将玩偶星球放到广告牌的后面",
+    "handCoverage": {
+      "frameCount": 142,
+      "dynhamrValidFrames": [
+        142,
+        142
+      ],
+      "bothValidFrames": 142,
+      "picoActiveFrames": [
+        142,
+        142
+      ],
+      "bodyValidFrames": 142,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        14.124209321778281,
+        10.296550536782648,
+        2.941550032959227
+      ],
+      "fingerDegrees": [
+        22.078872129586998,
+        21.64214799479713,
+        8.016381479470418
+      ],
+      "rootCm": [
+        3.168253197667365,
+        2.38453316960803,
+        1.0592933294400542
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.601877651927453,
+      "horizontalDisplacementMeters": 1.477386720263902,
+      "ankleExcursionMeters": [
+        0.3622995010611726,
+        0.5186515180456134
+      ],
+      "footTravelMeters": [
+        1.750709107846057,
+        1.934866107784094
+      ],
+      "footHorizontalExcursionMeters": [
+        1.4546515728814253,
+        1.4358823577653128
+      ],
+      "footVerticalExcursionMeters": [
+        0.10030508041381836,
+        0.09872448444366455
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.01921767507376883
+    }
+  },
+  {
+    "id": "capture-0730-168",
+    "title": "Wipe water from a tabletop",
+    "duration": 5.1,
+    "metadata": "/motion/capture-0730-168.json",
+    "video": "/motion/capture-0730-168.mp4",
+    "poster": "/motion/capture-0730-168.jpg",
+    "collection": "v1_0730",
+    "episode": 168,
+    "task": "找到抽纸，并擦拭桌面水渍",
+    "handCoverage": {
+      "frameCount": 153,
+      "dynhamrValidFrames": [
+        153,
+        153
+      ],
+      "bothValidFrames": 153,
+      "picoActiveFrames": [
+        153,
+        153
+      ],
+      "bodyValidFrames": 153,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        10.02171732658626,
+        9.796862624732187,
+        2.7163510365446353
+      ],
+      "fingerDegrees": [
+        20.21974902702968,
+        17.148405856887695,
+        8.587952406401904
+      ],
+      "rootCm": [
+        3.4285279224067926,
+        3.129992581600946,
+        0.9738050383933246
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.5970993869615393,
+      "horizontalDisplacementMeters": 0.9680080252635206,
+      "ankleExcursionMeters": [
+        0.5221306431548443,
+        0.6163843983505009
+      ],
+      "footTravelMeters": [
+        1.4178346429159365,
+        1.4509535066353494
+      ],
+      "footHorizontalExcursionMeters": [
+        0.998427672052371,
+        0.9439716682557732
+      ],
+      "footVerticalExcursionMeters": [
+        0.12017667293548584,
+        0.1073768138885498
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.015948431590393237
+    }
+  },
+  {
+    "id": "capture-0730-075",
+    "title": "Collect equipment into a box",
+    "duration": 4.066666666666666,
+    "metadata": "/motion/capture-0730-075.json",
+    "video": "/motion/capture-0730-075.mp4",
+    "poster": "/motion/capture-0730-075.jpg",
+    "collection": "v1_0730",
+    "episode": 75,
+    "task": "将其他桌上的设备整理到最近的桌子上放入盒子里",
+    "handCoverage": {
+      "frameCount": 122,
+      "dynhamrValidFrames": [
+        122,
+        122
+      ],
+      "bothValidFrames": 122,
+      "picoActiveFrames": [
+        122,
+        122
+      ],
+      "bodyValidFrames": 122,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        13.177945500771212,
+        12.555418486998429,
+        3.422471580730889
+      ],
+      "fingerDegrees": [
+        24.632618689802808,
+        20.937911535758584,
+        5.240841873977277
+      ],
+      "rootCm": [
+        4.33780173214522,
+        4.012279730193483,
+        1.2113532318563265
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.5444151217619964,
+      "horizontalDisplacementMeters": 1.450924501459759,
+      "ankleExcursionMeters": [
+        0.5449573870805843,
+        0.5036961401898982
+      ],
+      "footTravelMeters": [
+        1.8436599403615832,
+        1.5277933658771852
+      ],
+      "footHorizontalExcursionMeters": [
+        1.6737624289511857,
+        1.3573905829539146
+      ],
+      "footVerticalExcursionMeters": [
+        0.12934339046478271,
+        0.12169063091278076
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.019771688644330414
+    }
+  },
+  {
+    "id": "capture-0730-124",
+    "title": "Assemble a barrier around a table",
+    "duration": 4.7,
+    "metadata": "/motion/capture-0730-124.json",
+    "video": "/motion/capture-0730-124.mp4",
+    "poster": "/motion/capture-0730-124.jpg",
+    "collection": "v1_0730",
+    "episode": 124,
+    "task": "将护栏组装围住乒乓球拍",
+    "handCoverage": {
+      "frameCount": 141,
+      "dynhamrValidFrames": [
+        141,
+        141
+      ],
+      "bothValidFrames": 141,
+      "picoActiveFrames": [
+        141,
+        141
+      ],
+      "bodyValidFrames": 141,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        11.659959274642812,
+        10.947069129309936,
+        3.4027560626077378
+      ],
+      "fingerDegrees": [
+        13.550176593676586,
+        12.776095356666957,
+        6.424947844412947
+      ],
+      "rootCm": [
+        3.0644654821665265,
+        2.697932315322877,
+        0.8924827145493265
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.442935041543587,
+      "horizontalDisplacementMeters": 0.9203490260320459,
+      "ankleExcursionMeters": [
+        0.6165377021874645,
+        0.5573435019149046
+      ],
+      "footTravelMeters": [
+        1.963121665242106,
+        1.702755062795433
+      ],
+      "footHorizontalExcursionMeters": [
+        1.1883222025091087,
+        1.1311343136311895
+      ],
+      "footVerticalExcursionMeters": [
+        0.15013492107391357,
+        0.07990968227386475
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.01335543496982414
+    }
+  },
+  {
+    "id": "capture-0730-785",
+    "title": "Arrange stools under a table",
+    "duration": 3.6666666666666665,
+    "metadata": "/motion/capture-0730-785.json",
+    "video": "/motion/capture-0730-785.mp4",
+    "poster": "/motion/capture-0730-785.jpg",
+    "collection": "v1_0730",
+    "episode": 785,
+    "task": "将蓝色和灰色圆形沙发摆放到白色桌面底下",
+    "handCoverage": {
+      "frameCount": 110,
+      "dynhamrValidFrames": [
+        110,
+        110
+      ],
+      "bothValidFrames": 110,
+      "picoActiveFrames": [
+        110,
+        110
+      ],
+      "bodyValidFrames": 110,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        13.787795716120858,
+        10.356458938953377,
+        3.5941405820266157
+      ],
+      "fingerDegrees": [
+        22.973325788998167,
+        22.035158974537964,
+        7.401668260244497
+      ],
+      "rootCm": [
+        3.0036461110872876,
+        2.8379577659622957,
+        1.280802817121564
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.4344499027195587,
+      "horizontalDisplacementMeters": 1.2909356693057767,
+      "ankleExcursionMeters": [
+        0.4533234577260499,
+        0.43060485338385224
+      ],
+      "footTravelMeters": [
+        1.7252459447903021,
+        1.5370023501044907
+      ],
+      "footHorizontalExcursionMeters": [
+        1.494598811260912,
+        1.3593026547416058
+      ],
+      "footVerticalExcursionMeters": [
+        0.06745314598083496,
+        0.08642768859863281
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.01532083171385128
+    }
+  },
+  {
+    "id": "capture-0730-681",
+    "title": "Distribute tissues",
+    "duration": 4.2,
+    "metadata": "/motion/capture-0730-681.json",
+    "video": "/motion/capture-0730-681.mp4",
+    "poster": "/motion/capture-0730-681.jpg",
+    "collection": "v1_0730",
+    "episode": 681,
+    "task": "分发纸巾",
+    "handCoverage": {
+      "frameCount": 126,
+      "dynhamrValidFrames": [
+        126,
+        126
+      ],
+      "bothValidFrames": 126,
+      "picoActiveFrames": [
+        98,
+        126
+      ],
+      "bodyValidFrames": 126,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        12.790754035229064,
+        11.654997473129265,
+        4.830592534287441
+      ],
+      "fingerDegrees": [
+        22.662534366796237,
+        18.51710148833747,
+        7.486129268613865
+      ],
+      "rootCm": [
+        2.723917593077835,
+        2.638896187148387,
+        1.0546351621388486
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.4056434539846725,
+      "horizontalDisplacementMeters": 1.0669056712448868,
+      "ankleExcursionMeters": [
+        0.6728024662917227,
+        0.4963935793159577
+      ],
+      "footTravelMeters": [
+        1.77229875128718,
+        1.3377552904427747
+      ],
+      "footHorizontalExcursionMeters": [
+        1.274254643528647,
+        0.9691113830532432
+      ],
+      "footVerticalExcursionMeters": [
+        0.11133277416229248,
+        0.14352166652679443
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.014943620617052893
+    }
+  },
+  {
+    "id": "capture-0730-834",
+    "title": "Wash and wipe a pencil holder",
+    "duration": 4.4,
+    "metadata": "/motion/capture-0730-834.json",
+    "video": "/motion/capture-0730-834.mp4",
+    "poster": "/motion/capture-0730-834.jpg",
+    "collection": "v1_0730",
+    "episode": 834,
+    "task": "清洗并擦拭白色笔筒",
+    "handCoverage": {
+      "frameCount": 132,
+      "dynhamrValidFrames": [
+        132,
+        132
+      ],
+      "bothValidFrames": 132,
+      "picoActiveFrames": [
+        132,
+        132
+      ],
+      "bodyValidFrames": 132,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        10.984858345796589,
+        9.028359951975618,
+        2.519532218179279
+      ],
+      "fingerDegrees": [
+        19.800317307024482,
+        17.934387462521556,
+        5.121607136605251
+      ],
+      "rootCm": [
+        3.2786759246092103,
+        2.3680328117370264,
+        0.7359957371554048
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.1397804431093694,
+      "horizontalDisplacementMeters": 0.8408159942975761,
+      "ankleExcursionMeters": [
+        0.24480397563205708,
+        0.38076643559350315
+      ],
+      "footTravelMeters": [
+        0.9508952439171141,
+        1.1243776401018113
+      ],
+      "footHorizontalExcursionMeters": [
+        0.7817829163709359,
+        0.7979006865781235
+      ],
+      "footVerticalExcursionMeters": [
+        0.02218496799468994,
+        0.1021050214767456
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.018048535041678748
+    }
+  },
+  {
+    "id": "capture-0730-018",
+    "title": "Carry a stand into a corner",
+    "duration": 8.0,
+    "metadata": "/motion/capture-0730-018.json",
+    "video": "/motion/capture-0730-018.mp4",
+    "poster": "/motion/capture-0730-018.jpg",
+    "collection": "v1_0730",
+    "episode": 18,
+    "task": "任务将面前散落放置的支架移动到角落里。 拯起双手向前移动到支架前方，用右手缓缓靠近支架，然后抓住握紧，然后向上用力，然后转身，然后移动到角落里，然后右手缓缓往下一，待支架稳定。 稳定放到地面上后松开右，缓缓松开右手，然后双手归位，任务结束。",
+    "handCoverage": {
+      "frameCount": 240,
+      "dynhamrValidFrames": [
+        240,
+        240
+      ],
+      "bothValidFrames": 240,
+      "picoActiveFrames": [
+        240,
+        168
+      ],
+      "bodyValidFrames": 240,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        10.914782656103233,
+        9.137327063640532,
+        0.8098789236476337
+      ],
+      "fingerDegrees": [
+        12.518376322281826,
+        9.785310315788497,
+        4.04798204611051
+      ],
+      "rootCm": [
+        2.8175905399540784,
+        2.5513287758116485,
+        0.07324752907076737
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.0713292269067327,
+      "horizontalDisplacementMeters": 0.956615307337269,
+      "ankleExcursionMeters": [
+        0.4857782246650418,
+        0.5080366427039097
+      ],
+      "footTravelMeters": [
+        1.1565476128974392,
+        1.1644473194594616
+      ],
+      "footHorizontalExcursionMeters": [
+        0.9949013400342192,
+        0.9604441625625231
+      ],
+      "footVerticalExcursionMeters": [
+        0.09245002269744873,
+        0.15916657447814941
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.010842527581977653
+    }
+  },
+  {
+    "id": "capture-0730-214",
+    "title": "Wash a teacup",
+    "duration": 4.666666666666667,
+    "metadata": "/motion/capture-0730-214.json",
+    "video": "/motion/capture-0730-214.mp4",
+    "poster": "/motion/capture-0730-214.jpg",
+    "collection": "v1_0730",
+    "episode": 214,
+    "task": "清洗茶杯",
+    "handCoverage": {
+      "frameCount": 140,
+      "dynhamrValidFrames": [
+        140,
+        140
+      ],
+      "bothValidFrames": 140,
+      "picoActiveFrames": [
+        140,
+        140
+      ],
+      "bodyValidFrames": 140,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        12.546742682576404,
+        9.367468223506993,
+        2.1397034524388796
+      ],
+      "fingerDegrees": [
+        24.237579594480362,
+        20.527035311488806,
+        8.165416485592887
+      ],
+      "rootCm": [
+        2.4301890282671477,
+        2.3415649878967146,
+        0.5324703348320581
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 0.9922163902298073,
+      "horizontalDisplacementMeters": 0.5166210513510918,
+      "ankleExcursionMeters": [
+        0.30373407792892504,
+        0.39807136590792164
+      ],
+      "footTravelMeters": [
+        1.2647810135140154,
+        1.6939339485946154
+      ],
+      "footHorizontalExcursionMeters": [
+        0.6498132259931456,
+        0.8107009841624657
+      ],
+      "footVerticalExcursionMeters": [
+        0.08014869689941406,
+        0.10875117778778076
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.012475711730432819
+    }
+  },
+  {
+    "id": "capture-0730-297",
+    "title": "Lower a cardboard sheet to the floor",
+    "duration": 4.566666666666666,
+    "metadata": "/motion/capture-0730-297.json",
+    "video": "/motion/capture-0730-297.mp4",
+    "poster": "/motion/capture-0730-297.jpg",
+    "collection": "v1_0730",
+    "episode": 297,
+    "task": "将最上面的纸壳拿下来放到地上",
+    "handCoverage": {
+      "frameCount": 137,
+      "dynhamrValidFrames": [
+        137,
+        137
+      ],
+      "bothValidFrames": 137,
+      "picoActiveFrames": [
+        137,
+        137
+      ],
+      "bodyValidFrames": 137,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        4.0030000744341,
+        3.782221365049766,
+        1.279695747009402
+      ],
+      "fingerDegrees": [
+        12.771874302255387,
+        12.054046772124966,
+        4.265374774879234
+      ],
+      "rootCm": [
+        1.7450535911316452,
+        1.631622546044373,
+        0.6070068808157638
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 0.9404990063896929,
+      "horizontalDisplacementMeters": 0.6087262227350272,
+      "ankleExcursionMeters": [
+        0.17767684545978443,
+        0.14700779038916126
+      ],
+      "footTravelMeters": [
+        0.7974901559115495,
+        0.9856517379223554
+      ],
+      "footHorizontalExcursionMeters": [
+        0.6204197155137472,
+        0.6602896672577856
+      ],
+      "footVerticalExcursionMeters": [
+        0.046909213066101074,
+        0.04508841037750244
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.0058687074297720425
+    }
+  },
+  {
+    "id": "capture-0730-410",
+    "title": "Put stove parts into a drawer",
+    "duration": 4.166666666666667,
+    "metadata": "/motion/capture-0730-410.json",
+    "video": "/motion/capture-0730-410.mp4",
+    "poster": "/motion/capture-0730-410.jpg",
+    "collection": "v1_0730",
+    "episode": 410,
+    "task": "拆下燃气灶零件放入抽屉",
+    "handCoverage": {
+      "frameCount": 125,
+      "dynhamrValidFrames": [
+        125,
+        125
+      ],
+      "bothValidFrames": 125,
+      "picoActiveFrames": [
+        125,
+        125
+      ],
+      "bodyValidFrames": 125,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        6.697673400883079,
+        4.740961141845497,
+        1.7118781542664174
+      ],
+      "fingerDegrees": [
+        20.200626334197693,
+        17.144714068460868,
+        9.164892527020703
+      ],
+      "rootCm": [
+        2.061845198072171,
+        2.013302760397678,
+        0.6349210181284093
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 0.8393526264555884,
+      "horizontalDisplacementMeters": 0.5523520065931166,
+      "ankleExcursionMeters": [
+        0.3108544621139996,
+        0.29430249170119105
+      ],
+      "footTravelMeters": [
+        0.9953094190681585,
+        0.7013850813710201
+      ],
+      "footHorizontalExcursionMeters": [
+        0.660611032769811,
+        0.47540460296834364
+      ],
+      "footVerticalExcursionMeters": [
+        0.0443958044052124,
+        0.09248661994934082
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.0166633838676753
+    }
+  },
+  {
+    "id": "capture-0828-590",
+    "title": "Wipe a countertop",
+    "duration": 4.3,
+    "metadata": "/motion/capture-0828-590.json",
+    "video": "/motion/capture-0828-590.mp4",
+    "poster": "/motion/capture-0828-590.jpg",
+    "collection": "v1_0828",
+    "episode": 590,
+    "task": "擦拭台面",
+    "handCoverage": {
+      "frameCount": 129,
+      "dynhamrValidFrames": [
+        129,
+        129
+      ],
+      "bothValidFrames": 129,
+      "picoActiveFrames": [
+        129,
+        129
+      ],
+      "bodyValidFrames": 129,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        10.236717589858614,
+        8.28329035834386,
+        3.148941275297284
+      ],
+      "fingerDegrees": [
+        24.830805837595825,
+        18.809571759198032,
+        7.727567686313845
+      ],
+      "rootCm": [
+        2.412096670893869,
+        1.8918628165829077,
+        0.7224651748877594
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 1.0003104021172953,
+      "horizontalDisplacementMeters": 0.3061130462401042,
+      "ankleExcursionMeters": [
+        0.223444193776957,
+        0.2448547435626388
+      ],
+      "footTravelMeters": [
+        1.0971906244105094,
+        1.1193844268870796
+      ],
+      "footHorizontalExcursionMeters": [
+        0.5663405471529712,
+        0.536814402924615
+      ],
+      "footVerticalExcursionMeters": [
+        0.0578458309173584,
+        0.060050249099731445
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.011767722178593124
+    }
+  },
+  {
+    "id": "capture-0828-582",
+    "title": "Wipe a microwave",
+    "duration": 3.433333333333333,
+    "metadata": "/motion/capture-0828-582.json",
+    "video": "/motion/capture-0828-582.mp4",
+    "poster": "/motion/capture-0828-582.jpg",
+    "collection": "v1_0828",
+    "episode": 582,
+    "task": "擦拭微波炉",
+    "handCoverage": {
+      "frameCount": 103,
+      "dynhamrValidFrames": [
+        103,
+        103
+      ],
+      "bothValidFrames": 103,
+      "picoActiveFrames": [
+        103,
+        103
+      ],
+      "bodyValidFrames": 103,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        10.130888011186421,
+        9.619286726114813,
+        2.7494095716541205
+      ],
+      "fingerDegrees": [
+        22.34344670317621,
+        22.070692504821263,
+        7.267989948543443
+      ],
+      "rootCm": [
+        1.5134337970010565,
+        1.4578448293156308,
+        0.7320204389127136
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 0.7048801214234578,
+      "horizontalDisplacementMeters": 0.20015178308918496,
+      "ankleExcursionMeters": [
+        0.15138933027989449,
+        0.14541899771756925
+      ],
+      "footTravelMeters": [
+        0.6959440912179633,
+        0.5703652229604266
+      ],
+      "footHorizontalExcursionMeters": [
+        0.37264423745525405,
+        0.31734830478928633
+      ],
+      "footVerticalExcursionMeters": [
+        0.02562546730041504,
+        0.04411458969116211
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.008875484544598812
+    }
+  },
+  {
+    "id": "capture-0828-575",
+    "title": "Tidy a desk",
+    "duration": 3.1666666666666665,
+    "metadata": "/motion/capture-0828-575.json",
+    "video": "/motion/capture-0828-575.mp4",
+    "poster": "/motion/capture-0828-575.jpg",
+    "collection": "v1_0828",
+    "episode": 575,
+    "task": "整理桌面",
+    "handCoverage": {
+      "frameCount": 95,
+      "dynhamrValidFrames": [
+        95,
+        95
+      ],
+      "bothValidFrames": 95,
+      "picoActiveFrames": [
+        95,
+        95
+      ],
+      "bodyValidFrames": 95,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        12.97010981609634,
+        11.901261101805536,
+        3.118085608083364
+      ],
+      "fingerDegrees": [
+        19.76153761164929,
+        18.78497617833636,
+        8.321873942272482
+      ],
+      "rootCm": [
+        1.649000801535351,
+        1.6024371143239073,
+        0.6777458658575034
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 0.6902440321834333,
+      "horizontalDisplacementMeters": 0.2826280093121786,
+      "ankleExcursionMeters": [
+        0.27283899368158276,
+        0.3193591663431838
+      ],
+      "footTravelMeters": [
+        0.5213455278556636,
+        0.7405766441955516
+      ],
+      "footHorizontalExcursionMeters": [
+        0.2662750230073669,
+        0.5126388213982329
+      ],
+      "footVerticalExcursionMeters": [
+        0.053624749183654785,
+        0.05235028266906738
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.009326429252777404
+    }
+  },
+  {
+    "id": "capture-0828-186",
+    "title": "Sort tools by shape into a case",
+    "duration": 3.033333333333333,
+    "metadata": "/motion/capture-0828-186.json",
+    "video": "/motion/capture-0828-186.mp4",
+    "poster": "/motion/capture-0828-186.jpg",
+    "collection": "v1_0828",
+    "episode": 186,
+    "task": "给托盘里的工具按形状放入箱子",
+    "handCoverage": {
+      "frameCount": 91,
+      "dynhamrValidFrames": [
+        91,
+        91
+      ],
+      "bothValidFrames": 91,
+      "picoActiveFrames": [
+        91,
+        91
+      ],
+      "bodyValidFrames": 91,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        8.47700481688861,
+        8.330205364319761,
+        2.9077877221282664
+      ],
+      "fingerDegrees": [
+        24.6185029390233,
+        24.261548621034972,
+        8.497833070647633
+      ],
+      "rootCm": [
+        1.6878622956964215,
+        1.5387182598717666,
+        0.4577504803747511
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 0.5117132430739411,
+      "horizontalDisplacementMeters": 0.419351609316467,
+      "ankleExcursionMeters": [
+        0.22740860645056285,
+        0.2412859626581228
+      ],
+      "footTravelMeters": [
+        0.6187924158518572,
+        0.3848610392250756
+      ],
+      "footHorizontalExcursionMeters": [
+        0.4919446914875884,
+        0.2918457008742597
+      ],
+      "footVerticalExcursionMeters": [
+        0.05532193183898926,
+        0.031320929527282715
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.005868029083921143
+    }
+  },
+  {
+    "id": "capture-0828-387",
+    "title": "Collect paper scraps with a small shovel",
+    "duration": 4.2,
+    "metadata": "/motion/capture-0828-387.json",
+    "video": "/motion/capture-0828-387.mp4",
+    "poster": "/motion/capture-0828-387.jpg",
+    "collection": "v1_0828",
+    "episode": 387,
+    "task": "用小铲子把废纸弄到盒子里",
+    "handCoverage": {
+      "frameCount": 126,
+      "dynhamrValidFrames": [
+        126,
+        126
+      ],
+      "bothValidFrames": 126,
+      "picoActiveFrames": [
+        126,
+        126
+      ],
+      "bodyValidFrames": 126,
+      "criterion": "DynHaMR valid & visible at original 30 fps; PICO hand_active"
+    },
+    "quality": {
+      "bodyMissing": 0,
+      "handMissing": 0,
+      "bodyDegrees": [
+        5.919541090762166,
+        5.660869546472529,
+        1.2698013610650316
+      ],
+      "fingerDegrees": [
+        22.397409582846997,
+        16.056349974184876,
+        4.657520350516016
+      ],
+      "rootCm": [
+        1.8920402721516152,
+        1.8174010052228733,
+        0.2230278021797835
+      ],
+      "criterion": "Raw 30 Hz geodesic rotation continuity; no missing body/hands; no smoothing",
+      "bodyStepLimitDegrees": 15,
+      "fingerStepLimitDegrees": 25,
+      "rootStepLimitCm": 8,
+      "rootAccelerationLimitMetersPerFrameSquared": 0.02
+    },
+    "locomotion": {
+      "horizontalTravelMeters": 0.461878013088451,
+      "horizontalDisplacementMeters": 0.16443775906092764,
+      "ankleExcursionMeters": [
+        0.20749613231909672,
+        0.24509246517676597
+      ],
+      "footTravelMeters": [
+        0.2908461948409018,
+        0.35558592740478545
+      ],
+      "footHorizontalExcursionMeters": [
+        0.1623433494512186,
+        0.22986526425991222
+      ],
+      "footVerticalExcursionMeters": [
+        0.02277684211730957,
+        0.07058548927307129
+      ],
+      "maxRootAccelerationMetersPerFrameSquared": 0.009187680872313413
+    }
   }
 ]

@@ -4,6 +4,7 @@ import { ScalingAnimation } from "./ScalingAnimation";
 import { LambdaMark } from "./LambdaMark";
 import { HeroMotion } from "./HeroMotion";
 import { PageTransitions } from "./PageTransitions";
+import { ZeroTransfer } from "./ZeroTransfer";
 import { ablations, demoScenes, results, type DemoVideo } from "./research";
 
 const stages = [
@@ -76,6 +77,7 @@ export default function Home() {
           </section>
         ))}
       </section>
+      <ZeroTransfer />
       <section className="content-section data-section" id="data">
         <div className="section-intro"><div><p className="section-label">HumanVerse-500</p><h2>Capture the body.<br />Keep the context.</h2></div><p>500 hours of mobile human activity, collected with portable sensors in everyday spaces. Visual observations stay aligned with whole-body and hand motion.</p></div>
         <PaperFigure name="humanverse" width={3200} height={1247} alt="HumanVerse-500: wearable capture setup, skill frequencies, five-ring activity distribution, and synchronized image–pose examples" caption="HumanVerse-500 spans everyday scenes, objects, and coordinated whole-body activities." />

@@ -27,6 +27,13 @@ test("server-renders the research project page", async () => {
   assert.match(html, /Read the report/);
   assert.equal((html.match(/class="demo-scene"/g) ?? []).length, 3);
   assert.equal((html.match(/class="demo-video"/g) ?? []).length, 9);
+  assert(html.indexOf('id="zero-transfer"') > html.indexOf('id="demos"'));
+  assert(html.indexOf('id="zero-transfer"') < html.indexOf('id="data"'));
+  assert.match(html, /Navigation transfer/);
+  assert.match(html, /Manipulation transfer/);
+  assert.match(html, /Human demonstration/);
+  assert.match(html, /Aligned execution/);
+  assert.match(html, /Unaligned replay/);
   assert.equal((html.match(/Video coming soon/g) ?? []).length, 0);
   for (const [scene, count] of [["laboratory", 4], ["break-room", 3], ["visitor-center", 2]]) {
     for (let index = 1; index <= count; index++) {

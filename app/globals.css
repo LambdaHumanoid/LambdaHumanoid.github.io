@@ -451,6 +451,35 @@ footer { min-height: 96px; padding: 24px max(var(--page-gutter),calc((100vw - va
 
 .demo-video-title { text-align: center; }
 
+/* Transfer examples keep navigation cases and human/robot comparisons together. */
+.transfer-section .section-intro { grid-template-columns: 1.35fr 1fr; }
+.transfer-block + .transfer-block { margin-top: 52px; }
+.transfer-heading { margin-bottom: 24px; }
+.transfer-heading h3 { margin: 0 0 8px; font: 500 30px/1.2 var(--serif); letter-spacing: -.02em; }
+.transfer-heading p { margin: 0; color: var(--muted); font-size: 15px; }
+.transfer-navigation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.transfer-navigation-task h4 { margin: 0 0 12px; font-size: 18px; font-weight: 600; }
+.transfer-choices { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.transfer-choices button { border: 1px solid transparent; border-radius: 5px; background: transparent; color: var(--muted); padding: 7px 10px; font: 500 12px/1.4 var(--sans); cursor: pointer; }
+.transfer-choices button:hover { color: var(--purple); background: #ece6f280; }
+.transfer-choices button[aria-pressed="true"] { color: #684580; background: #ece6f2; border-color: #d9cbe4; }
+.transfer-task-choices { margin: 0 0 22px; gap: 10px; }
+.transfer-task-choices button { padding: 9px 18px; font-size: 15px; }
+.transfer-comparison-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.transfer-video { margin: 0; min-width: 0; }
+.transfer-video figcaption { margin-bottom: 10px; color: var(--muted); font-size: 13px; font-weight: 500; }
+.transfer-video:nth-child(2) figcaption { color: var(--purple); }
+.transfer-alignment { margin-top: 24px; }
+.transfer-alignment summary { width: fit-content; color: var(--purple); cursor: pointer; font-size: 13px; }
+.transfer-alignment[open] summary { margin-bottom: 20px; }
+.transfer-section .demo-player-controls { gap: 2px; padding-inline: 4px; }
+.transfer-section .demo-player-controls button { flex-basis: 32px; }
+@media (max-width: 680px) {
+  .transfer-section .section-intro, .transfer-navigation-grid, .transfer-comparison-grid { grid-template-columns: minmax(0, 1fr); }
+  .transfer-task-choices { gap: 4px; }
+  .transfer-task-choices button { font-size: 13px; padding-inline: 10px; }
+}
+
 @media (max-width: 640px) {
   .motion-human-gallery > .motion-heading { font-size: 14px; gap: 10px; }
 }

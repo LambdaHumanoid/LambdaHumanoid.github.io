@@ -5,6 +5,15 @@ import { gunzipSync } from 'node:zlib';
 import vm from 'node:vm';
 
 const root = new URL('../offline-site/', import.meta.url);
+test('GitHub Pages root serves the project directly with local resources', async () => {
+  const siteRoot = new URL('../', import.meta.url);
+  const html = await readFile(new URL('index.html', siteRoot), 'utf8');
+  assert.equal(html, await readFile(new URL('index.html', root), 'utf8'));
+  assert.doesNotMatch(html, /location\.replace|http-equiv="refresh"/);
+  const assets = [...html.matchAll(/(?:src|href|poster)="(\.\/[^"?#]+)(?:\?[^"#]*)?"/g)].map(match => match[1]);
+  for (const asset of new Set(assets)) await access(new URL(asset, siteRoot));
+});
+
 test('offline page has local resources, nine demos, and neutral project branding', async () => {
   const html = await readFile(new URL('index.html', root), 'utf8');
   assert.match(html, /<title>Scaling Egocentric Human Data for General Humanoid Control<\/title>/);

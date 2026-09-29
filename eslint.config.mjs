@@ -15,6 +15,7 @@ const eslintConfig = defineConfig([
     "build/**",
     "work/**",
     "offline-site/**",
+    "offline/**",
     "next-env.d.ts",
   ]),
   eslint.configs.recommended,

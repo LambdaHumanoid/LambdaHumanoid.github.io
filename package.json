@@ -11,7 +11,7 @@
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "test": "npm run build && node --test tests/*.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "build:offline": "npm run build && node scripts/build-offline.mjs offline-site --bundle-only"
+    "build:offline": "npm run build && node scripts/build-offline.mjs offline-site --bundle-only && node scripts/publish-root.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

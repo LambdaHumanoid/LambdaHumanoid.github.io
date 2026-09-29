@@ -19,13 +19,6 @@ const plugin = { name:'offline-page',setup(b) {
   b.onLoad({filter:/\/app\/.*\.(tsx?|json)$/},async args=> {
     let s = await fs.readFile(args.path,'utf8');
     const name=path.basename(args.path);
-    if (name==='page.tsx') {
-      // Keep the standalone page focused on the included demonstrations.
-      const paperLinks = /<a\b[^>]*href="\/paper\.pdf"[^>]*>[\s\S]*?<\/a>/g;
-      if ((s.match(paperLinks) ?? []).length !== 3) throw new Error('Unexpected paper links');
-      s=s.replace(paperLinks,'').replace(/<section className="closing">[\s\S]*?<\/section>/,'');
-      s=patch(s,'className="button quiet" href="#demos"','className="button primary" href="#demos"');
-    }
     if (name==='motion-preload.ts') s='import { offlineFetch as fetch } from "offline-runtime";\n'+s;
     if (name==='robot-model.ts') {
       s='import { loadOfflineBlob } from "offline-runtime";\n'+s;
@@ -76,6 +69,7 @@ for(const name of required) {
 }
 const entry=path.join(target,'index.html');
 await fs.copyFile(path.join(root, 'public/favicon.svg'), path.join(target, 'favicon.svg'));
+await fs.copyFile(path.join(root, 'public/paper.pdf'), path.join(target, 'paper.pdf'));
 const { default: server } = await import(pathToFileURL(path.join(root, 'dist/server/index.js')).href);
 const response = await server.fetch(
   new Request('http://localhost/', { headers: { accept: 'text/html' } }),
@@ -85,10 +79,7 @@ const response = await server.fetch(
 if (response.status !== 200) throw new Error('Unable to render offline fallback');
 const main = (await response.text()).match(/<main\b[\s\S]*?<\/main>/)?.[0];
 if (!main) throw new Error('Missing fallback HTML');
-const fallback = relativePaths(main)
-  .replace(/<a\b[^>]*href="\.\/paper\.pdf"[^>]*>[\s\S]*?<\/a>/g, '')
-  .replace(/<section class="closing">[\s\S]*?<\/section>/, '')
-  .replace('class="button quiet" href="#demos"', 'class="button primary" href="#demos"');
+const fallback = relativePaths(main);
 const scripts = [];
 for (const name of ['packed-codec.js', 'shared.js', 'page.js']) {
   try { await fs.access(path.join(offline, name)); scripts.push(`<script defer src="./offline/${name}"></script>`); } catch { /* Raw asset builds do not need packing helpers. */ }

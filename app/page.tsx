@@ -50,14 +50,14 @@ export default function Home() {
       <header className="site-header">
         <a className="brand lambda" href="#top" aria-label="Lambda zero home"><LambdaMark /></a>
         <nav aria-label="Primary navigation"><a href="#overview">Overview</a><a href="#demos">Demos</a><a href="#data">Data</a><a href="#training">Method</a><a href="#evaluation">Results</a></nav>
-        <a className="paper-link" href="/paper.pdf" target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>
+        <a className="paper-link" href="/paper.pdf" target="_blank" rel="noreferrer">Report <span aria-hidden="true">↗</span></a>
       </header>
       <section className="hero" id="top">
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
           <h1><span className="sr-only">λ₀: </span><span className="hero-title">Scaling Egocentric Human Data for General Humanoid Control</span></h1>
           <p className="hero-lede">Learning to move and manipulate from human experience. λ₀ transfers egocentric whole-body activity into coordinated locomotion, posture, and dexterous interaction on a humanoid robot.</p>
-          <div className="hero-actions"><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
+          <div className="hero-actions"><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
         </div>
       </section>
       <section className="thesis" id="overview">
@@ -111,7 +111,7 @@ export default function Home() {
         <ScalingAnimation />
         <div className="scaling-findings"><article><h3>Two fixed holdouts</h3><p>From 5% to 100% data, minimum loss decreases by <strong>35.5%</strong> on the representative holdout and <strong>40.6%</strong> on the clean holdout. Both are disjoint from training sessions.</p><p className="section-note">One run per scale. These validation curves do not establish cross-seed reproducibility or improved robot control at every scale.</p></article><article><h3>Downstream task progress</h3><div className="endpoint-comparison"><div><span>No Stage II</span><strong>59.9<small>%</small></strong></div><span className="endpoint-gain">+20.5 pts</span><div><span>Full recipe</span><strong>80.4<small>%</small></strong></div></div><p>The measured real-world endpoints show a gain from Stage II. Evaluations at 5%, 10%, 25%, and 50% are pending, so intermediate-scale trends remain unestablished.</p></article></div>
       </section>
-      <section className="closing"><p className="section-label">Explore the research</p><h2>Human motion as a foundation<br />for humanoid control.</h2><p className="closing-copy">Read the full method, evaluation protocols, and experimental findings in the manuscript.</p><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a></section>
+      <section className="closing"><p className="section-label">Explore the research</p><h2>Human motion as a foundation<br />for humanoid control.</h2><p className="closing-copy">Read the full method, evaluation protocols, and experimental findings in the manuscript.</p><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a></section>
       <footer><a className="footer-brand" href="#top" aria-label="Introducing lambda-0 with HumanVerse-500"><span>Introducing</span><LambdaMark /><span>with HumanVerse-500</span></a><a className="footer-top" href="#top">Back to top ↑</a></footer>
     </main>
   );

@@ -9,7 +9,8 @@ test('offline page has local resources, nine demos, and neutral project branding
   const html = await readFile(new URL('index.html', root), 'utf8');
   assert.match(html, /<title>Scaling Egocentric Human Data for General Humanoid Control<\/title>/);
   assert.doesNotMatch(html, /ICLR|Anonymous submission|Anonymous Authors|submission-badge|submission-footer/i);
-  assert.doesNotMatch(html, /Video coming soon|href="\.\/paper\.pdf"/);
+  assert.doesNotMatch(html, /Video coming soon/);
+  assert.equal((html.match(/href="\.\/paper\.pdf"/g) ?? []).length, 3);
   assert.equal((html.match(/class="demo-video"/g) ?? []).length, 9);
   const assets = [...html.matchAll(/(?:src|href)="(\.\/[^"?#]+)(?:\?[^"#]*)?"/g)].map(match => match[1]);
   assert(assets.length > 20);

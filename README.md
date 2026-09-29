@@ -39,9 +39,8 @@ npm run build:offline
 
 This rebuilds the HTML, CSS, and browser bundle from `app/`, preserving the
 existing packed recordings in `offline-site/offline/assets/`. It also updates
-the static HTML fallback so it agrees with the interactive page. The offline
-page deliberately omits the manuscript links; its accompanying PDF is not
-needed to run the interactive demonstrations.
+the static HTML fallback so it agrees with the interactive page. The latest report is included as `paper.pdf`, with local links in the navigation,
+hero, and closing section. The build copies it from `public/paper.pdf`.
 
 `scripts/build-offline.mjs` also supports a full asset export when pointed at an
 unpacked site containing the original `motion/*.json`, meshes and videos.

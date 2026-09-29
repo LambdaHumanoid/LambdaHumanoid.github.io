@@ -24,7 +24,7 @@ test("server-renders the research project page", async () => {
   const html = (await response.text()).replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
   assert.match(html, /Scaling Egocentric Human Data for General Humanoid Control/);
   assert.match(html, /HumanVerse-500/);
-  assert.match(html, /Read the paper/);
+  assert.match(html, /Read the report/);
   assert.equal((html.match(/class="demo-scene"/g) ?? []).length, 3);
   assert.equal((html.match(/class="demo-video"/g) ?? []).length, 9);
   assert.equal((html.match(/Video coming soon/g) ?? []).length, 0);

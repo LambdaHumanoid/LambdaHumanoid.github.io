@@ -53,7 +53,7 @@ export default function Home() {
         <a className="paper-link" href="/paper.pdf" target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>
       </header>
       <section className="hero" id="top">
-        <span className="hero-model-mark" aria-hidden="true"><LambdaMark gradientId="hero-lambda-gradient" /></span>
+        <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
           <h1><span className="sr-only">λ₀: </span><span className="hero-title">Scaling Egocentric Human Data for General Humanoid Control</span></h1>
           <p className="hero-lede">Learning to move and manipulate from human experience. λ₀ transfers egocentric whole-body activity into coordinated locomotion, posture, and dexterous interaction on a humanoid robot.</p>

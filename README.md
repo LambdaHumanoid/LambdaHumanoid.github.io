@@ -9,11 +9,13 @@ Open `offline-site/index.html` in a modern browser. The page includes its own
 scripts, images, videos, and packed motion assets. No server, npm installation,
 or internet connection is required. WebGL is required for the 3D viewers.
 
-The offline snapshot contains four real-world demonstration videos, updated
+The offline snapshot contains nine real-world demonstration videos (four laboratory
+tasks, three break-room tasks, and two visitor-center tasks), updated
 paper figures, the 39-recording human motion gallery, synchronized G1 replay, and the scaling
 animation. Empty video sections are omitted. Its videos use the compact encodings
 from the supplied offline package; the source website retains the original
-higher-resolution videos in `public/videos/`.
+higher-resolution videos in `public/videos/`. The break-room and visitor-center clips use browser-compatible
+H.264 at 1080p online and 720p offline; the alternate fruit-delivery take is excluded.
 
 ## Develop the website
 

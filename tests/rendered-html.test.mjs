@@ -25,15 +25,16 @@ test("server-renders the research project page", async () => {
   assert.match(html, /Towards a General Humanoid/);
   assert.match(html, /HumanVerse-500/);
   assert.match(html, /Read the paper/);
-  assert.equal((html.match(/class="demo-scene"/g) ?? []).length, 1);
-  assert.equal((html.match(/class="demo-video"/g) ?? []).length, 4);
+  assert.equal((html.match(/class="demo-scene"/g) ?? []).length, 3);
+  assert.equal((html.match(/class="demo-video"/g) ?? []).length, 9);
   assert.equal((html.match(/Video coming soon/g) ?? []).length, 0);
-  for (const scene of ["laboratory"]) {
-    for (let index = 1; index <= 4; index++) {
+  for (const [scene, count] of [["laboratory", 4], ["break-room", 3], ["visitor-center", 2]]) {
+    for (let index = 1; index <= count; index++) {
       assert.equal((html.match(new RegExp(`id="${scene}-0${index}"`, "g")) ?? []).length, 1);
     }
   }
-  assert.doesNotMatch(html, /break-room-heading|id="break-room-/);
+  assert.match(html, /break-room-heading/);
+  assert.doesNotMatch(html, /id="break-room-04"|次优/);
   assert.match(html, /<details class="research-details" open=""/);
   assert.doesNotMatch(html, /src=""/);
   assert.match(html, /HumanVerse in motion/);

@@ -22,13 +22,16 @@ export const demoScenes: { id: string; title: string; videos: DemoVideo[] }[] = 
     { id: "laboratory-01", title: "Toy storage", videoSrc: "/videos/laboratory/toy-storage.mp4", posterSrc: "/videos/laboratory/toy-storage.jpg", captionsSrc: null },
     { id: "laboratory-02", title: "Box transport", videoSrc: "/videos/laboratory/box-transport.mp4", posterSrc: "/videos/laboratory/box-transport.jpg", captionsSrc: null },
     { id: "laboratory-03", title: "Bottle disposal", videoSrc: "/videos/laboratory/bottle-disposal.mp4?v=b6cd360f21", posterSrc: "/videos/laboratory/bottle-disposal.jpg?v=b6cd360f21", captionsSrc: null },
-    { id: "laboratory-04", title: "Chair placement", videoSrc: "/videos/laboratory/chair-placement.mp4", posterSrc: "/videos/laboratory/chair-placement.jpg", captionsSrc: null },
+    { id: "laboratory-04", title: "Chair placement", videoSrc: "/videos/laboratory/chair-placement.mp4", posterSrc: "/videos/laboratory/chair-placement.jpg?v=opening-frame", captionsSrc: null },
   ] },
   { id: "break-room", title: "Break room", videos: [
-    { id: "break-room-01", title: "Demonstration 01", videoSrc: null, posterSrc: null, captionsSrc: null },
-    { id: "break-room-02", title: "Demonstration 02", videoSrc: null, posterSrc: null, captionsSrc: null },
-    { id: "break-room-03", title: "Demonstration 03", videoSrc: null, posterSrc: null, captionsSrc: null },
-    { id: "break-room-04", title: "Demonstration 04", videoSrc: null, posterSrc: null, captionsSrc: null },
+    { id: "break-room-01", title: "Cart pushing", videoSrc: "/videos/break-room/cart-pushing.mp4", posterSrc: "/videos/break-room/cart-pushing.jpg", captionsSrc: null },
+    { id: "break-room-03", title: "Fruit delivery", videoSrc: "/videos/break-room/fruit-delivery.mp4", posterSrc: "/videos/break-room/fruit-delivery.jpg", captionsSrc: null },
+    { id: "break-room-02", title: "Takeout bag disposal", videoSrc: "/videos/break-room/takeout-bag-disposal.mp4", posterSrc: "/videos/break-room/takeout-bag-disposal.jpg", captionsSrc: null },
+  ] },
+  { id: "visitor-center", title: "Visitor center", videos: [
+    { id: "visitor-center-01", title: "Table wiping", videoSrc: "/videos/visitor-center/table-wiping.mp4", posterSrc: "/videos/visitor-center/table-wiping.jpg", captionsSrc: null },
+    { id: "visitor-center-02", title: "Plant watering", videoSrc: "/videos/visitor-center/plant-watering.mp4", posterSrc: "/videos/visitor-center/plant-watering.jpg", captionsSrc: null },
   ] },
 ];
 

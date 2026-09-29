@@ -1,4 +1,5 @@
 import { DemoPlayer } from "./DemoPlayer";
+import { AmbientWaves } from "./AmbientWaves";
 import { ScalingAnimation } from "./ScalingAnimation";
 import { LambdaMark } from "./LambdaMark";
 import { HeroMotion } from "./HeroMotion";
@@ -28,13 +29,7 @@ function Demo({ video, scene, index }: { video: DemoVideo; scene: string; index:
   return (
     <article className="demo-video" id={video.id}>
       <div className="demo-media">
-        {video.videoSrc ? (scene === "Laboratory" ? <DemoPlayer video={video} scene={scene} /> : (
-          <video controls muted playsInline preload="none" poster={video.posterSrc ?? undefined} aria-label={`${scene}: ${video.title}`}>
-            <source src={video.videoSrc} type="video/mp4" />
-            <track kind="captions" src={video.captionsSrc ?? undefined} srcLang="en" label="English" default={Boolean(video.captionsSrc)} />
-            Your browser does not support embedded video. <a href={video.videoSrc}>Download the demonstration</a>.
-          </video>
-        )) : (
+        {video.videoSrc ? <DemoPlayer video={video} scene={scene} /> : (
           <div className="demo-placeholder" aria-label={`${scene}: ${video.title}, video coming soon`}>
             <span className="demo-placeholder-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
             <span>Video coming soon</span>
@@ -49,6 +44,7 @@ function Demo({ video, scene, index }: { video: DemoVideo; scene: string; index:
 export default function Home() {
   return (
     <main id="main">
+      <AmbientWaves />
       <PageTransitions />
       <a href="#overview" className="skip-link">Skip to research overview</a>
       <header className="site-header">
@@ -61,7 +57,7 @@ export default function Home() {
         <div className="hero-content">
           <h1><span className="sr-only">λ₀: </span><span className="hero-title">Towards a General Humanoid Loco-Manipulation Model</span><span className="hero-subtitle">via Egocentric Whole-Body Human Data Pretraining</span></h1>
           <p className="hero-lede">Learning to move and manipulate from human experience. λ₀ transfers egocentric whole-body activity into coordinated locomotion, posture, and dexterous interaction on a humanoid robot.</p>
-          <div className="hero-actions"><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a><a className="button quiet" href="#demos">Explore the tasks <span aria-hidden="true">↓</span></a></div>
+          <div className="hero-actions"><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
         </div>
       </section>
       <section className="thesis" id="overview">
@@ -77,10 +73,11 @@ export default function Home() {
         <article><strong>80.4<span>%</span></strong><span>average real-world task progress</span></article>
       </section>
       <section className="content-section demos-section" id="demos">
-        <div className="section-intro"><div><p className="section-label">Real-world demonstrations</p><h2>Move. Reach. Manipulate.</h2></div><p>Four real-world loco-manipulation demonstrations.</p></div>
+        <div className="section-intro"><div><p className="section-label">Real-world demonstrations</p><h2>Move. Reach. Manipulate.</h2></div><p>Whole-body loco-manipulation across the laboratory, break room, and visitor center.</p></div>
         {demoScenes.filter(scene => scene.videos.some(video => video.videoSrc)).map(scene => (
-          <section className="demo-scene" key={scene.id} aria-label="Real-world demonstration videos">
-            <div className={`demo-grid${scene.id === "laboratory" ? " demo-grid-laboratory" : ""}`} tabIndex={0} role="region" aria-label="Real-world demonstration videos">
+          <section className="demo-scene" key={scene.id} aria-labelledby={`${scene.id}-heading`}>
+            <div className="demo-scene-heading"><h3 id={`${scene.id}-heading`}>{scene.title}</h3></div>
+            <div className={`demo-grid demo-grid-${scene.id}`} tabIndex={0} role="region" aria-label={`${scene.title} demonstration videos`}>
               {scene.videos.map((video, index) => <Demo key={video.id} video={video} scene={scene.title} index={index} />)}
             </div>
           </section>

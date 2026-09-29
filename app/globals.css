@@ -47,14 +47,14 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .site-header nav a { padding-block: 12px; }
 .site-header nav a:hover, .paper-link:hover { color: var(--purple); }
 .paper-link { font-size: 13px; font-weight: 600; white-space: nowrap; }
-.hero { position: relative; min-height: min(900px, 100svh); padding: 180px max(var(--page-gutter), calc((100vw - var(--page-max)) / 2)) 170px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--line); background: transparent; }
+.hero { position: relative; min-height: min(900px, 100svh); padding: 180px max(var(--page-gutter), calc((100vw - 1280px) / 2)) 170px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--line); background: transparent; }
 .hero::before { content: ""; position: absolute; inset: 72px 0 0; opacity: .42; background-image: linear-gradient(#15191d0b 1px, transparent 1px), linear-gradient(90deg,#15191d0b 1px,transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, transparent, black 30%, transparent 95%); }
 .hero-content { position: relative; z-index: 3; width: 100%; container-type: inline-size; }
 .hero-model-mark { position: absolute; z-index: 0; top: 48%; right: max(var(--page-gutter), calc((100vw - var(--page-max)) / 2)); color: #bda5df; font: italic 700 clamp(253px, 33vw, 484px)/.75 var(--serif); letter-spacing: -.01em; opacity: .18; transform: translateY(-50%); pointer-events: none; user-select: none; }
-.hero h1 { margin: 0; max-width: 1120px; color: var(--purple); font: 560 clamp(32px, 3.1vw, 44px)/1.16 var(--sans); letter-spacing: -.045em; text-wrap: balance; }
+.hero h1 { margin: 0; max-width: 1280px; color: var(--purple); font: 560 clamp(32px, 3.7vw, 50px)/1.16 var(--sans); letter-spacing: -.045em; text-wrap: balance; }
 .hero-title, .hero-subtitle { background: linear-gradient(105deg, #91abc8 0%, #859fc9 20%, #8c91cc 42%, #9582c5 62%, #8074b8 78%, #513ecb 100%); background-clip: text; -webkit-background-clip: text; color: transparent; }
 @media (min-width: 761px) {
-  .hero-title { white-space: nowrap; font-size: min(1em, 3.7cqw); }
+  .hero-title { white-space: nowrap; font-size: min(1em, 3.8cqw); }
 }
 .hero-model-mark { background: linear-gradient(125deg, #91abc8 0%, #a0a4d5 28%, #b5a4dc 52%, #a08bd3 76%, #8872c7 100%); background-clip: text; -webkit-background-clip: text; color: transparent; }
 .hero-subtitle { display: block; width: fit-content; max-width: 100%; margin-top: 24px; font-weight: 500; }

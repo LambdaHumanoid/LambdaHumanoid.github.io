@@ -50,7 +50,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .hero { position: relative; min-height: min(900px, 100svh); padding: 180px max(var(--page-gutter), calc((100vw - var(--page-max)) / 2)) 170px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--line); background: transparent; }
 .hero::before { content: ""; position: absolute; inset: 72px 0 0; opacity: .42; background-image: linear-gradient(#15191d0b 1px, transparent 1px), linear-gradient(90deg,#15191d0b 1px,transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, transparent, black 30%, transparent 95%); }
 .hero-content { position: relative; z-index: 3; width: 100%; container-type: inline-size; }
-.hero-model-mark { position: absolute; z-index: 0; top: 43%; right: max(var(--page-gutter), calc((100vw - var(--page-max)) / 2)); color: #bda5df; font: italic 700 clamp(253px, 33vw, 484px)/.75 var(--serif); letter-spacing: -.01em; opacity: .18; transform: translateY(-50%); pointer-events: none; user-select: none; }
+.hero-model-mark { position: absolute; z-index: 0; top: 48%; right: max(var(--page-gutter), calc((100vw - var(--page-max)) / 2)); color: #bda5df; font: italic 700 clamp(253px, 33vw, 484px)/.75 var(--serif); letter-spacing: -.01em; opacity: .18; transform: translateY(-50%); pointer-events: none; user-select: none; }
 .hero h1 { margin: 0; max-width: 1120px; color: var(--purple); font: 560 clamp(32px, 3.1vw, 44px)/1.16 var(--sans); letter-spacing: -.045em; text-wrap: balance; }
 .hero-title, .hero-subtitle { background: linear-gradient(105deg, #91abc8 0%, #859fc9 20%, #8c91cc 42%, #9582c5 62%, #8074b8 78%, #513ecb 100%); background-clip: text; -webkit-background-clip: text; color: transparent; }
 @media (min-width: 761px) {
@@ -244,7 +244,7 @@ footer { min-height: 96px; padding: 24px max(var(--page-gutter),calc((100vw - va
   .hero { min-height: 880px; padding: 157px 20px 235px; justify-content: flex-start; }
   .hero h1 { font-size: clamp(29px,8vw,40px); letter-spacing: -.04em; text-wrap: initial; }
   .hero-subtitle { margin-top: 23px; }
-  .hero-model-mark { top: 38%; right: 20px; font-size: 270px; }
+  .hero-model-mark { top: 43%; right: 20px; font-size: 270px; }
   .hero-lede { font-size: 14px; line-height: 1.7; margin-top: 25px; }
   .hero-actions { gap: 9px; margin-top: 25px; }
   .button { font-size: 12px; padding: 12px 15px; gap: 16px; }

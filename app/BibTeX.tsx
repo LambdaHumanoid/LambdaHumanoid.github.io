@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { citations } from "./citations";
-import { ResourceIcon } from "./ResourceIcon";
 
 export function BibTeX() {
   const [status, setStatus] = useState("");
@@ -16,11 +15,9 @@ export function BibTeX() {
     }
   }
 
-  return <details className="bibtex-resource">
-    <summary><ResourceIcon kind="citation" /><span>BibTeX</span><ResourceIcon kind="chevron" /></summary>
+  return <section className="content-section bibtex-section" id="bibtex" aria-labelledby="bibtex-title">
+    <div className="section-intro"><div><p className="section-label">Citation</p><h2 id="bibtex-title">BibTeX</h2></div><p>Cite λ₀, EgoHumanoid-V2, and EgoAlign using their official arXiv entries.</p></div>
     <div className="bibtex-panel">
-      <h2>Cite λ₀, EgoHumanoid-V2, and EgoAlign</h2>
-      <p>Official arXiv citations. The λ₀ entry retains its current arXiv title.</p>
       <div className="bibtex-actions">
         <button type="button" onClick={copy}>Copy all</button>
         <a href="/citations.bib" download>Download .bib</a>
@@ -28,5 +25,5 @@ export function BibTeX() {
       </div>
       <pre role="region" tabIndex={0} aria-label="BibTeX citations"><code>{citations}</code></pre>
     </div>
-  </details>;
+  </section>;
 }

@@ -64,9 +64,9 @@ export default function Home() {
             <a className="resource-link resource-report" href="/paper.pdf" target="_blank" rel="noreferrer"><ResourceIcon kind="report" /><span>Report</span><ResourceIcon kind="external" /></a>
             <a className="resource-link" href="https://github.com/LambdaHumanoid/openlambda" target="_blank" rel="noreferrer"><ResourceIcon kind="github" /><span>GitHub</span><ResourceIcon kind="external" /></a>
             <span className="resource-pending" aria-disabled="true"><span className="resource-huggingface" aria-hidden="true">🤗</span><span>Hugging Face</span><small>Soon</small></span>
-            <BibTeX />
+            <a className="resource-link" href="#bibtex"><ResourceIcon kind="citation" /><span>BibTeX</span><ResourceIcon kind="chevron" /></a>
           </div>
-          <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a><a className="button quiet" href="/videos/report-video.mp4?v=e501883b93" target="_blank" rel="noreferrer">Watch the report <span aria-hidden="true">↗</span></a></div>
+          <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a><a className="button quiet" href="/videos/report-video.mp4?v=e501883b93" target="_blank" rel="noreferrer">Watch video <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
       <section className="thesis" id="overview">
@@ -118,6 +118,7 @@ export default function Home() {
         <div className="scaling-findings"><article><h3>Two fixed holdouts</h3><p>From 5% to 100% data, minimum loss decreases by <strong>35.5%</strong> on the representative holdout and <strong>40.6%</strong> on the clean holdout. Both are disjoint from training sessions.</p><p className="section-note">One run per scale. These validation curves do not establish cross-seed reproducibility or improved robot control at every scale.</p></article><article><h3>Downstream task progress</h3><div className="endpoint-comparison"><div><span>No Stage II</span><strong>59.9<small>%</small></strong></div><span className="endpoint-gain">+20.5 pts</span><div><span>Full recipe</span><strong>80.4<small>%</small></strong></div></div><p>The measured real-world endpoints show a gain from Stage II. Evaluations at 5%, 10%, 25%, and 50% are pending, so intermediate-scale trends remain unestablished.</p></article></div>
       </section>
       <section className="closing"><p className="section-label">Explore the research</p><h2>Human motion as a foundation<br />for humanoid control.</h2><p className="closing-copy">Read the full method, evaluation protocols, and experimental findings in the manuscript.</p><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a></section>
+      <BibTeX />
       <footer><a className="footer-brand" href="#top" aria-label="Introducing lambda-0 with HumanVerse-500"><span>Introducing</span><LambdaMark /><span>with HumanVerse-500</span></a><a className="footer-top" href="#top">Back to top ↑</a></footer>
     </main>
   );

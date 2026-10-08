@@ -30,7 +30,7 @@ test("server-renders the research project page", async () => {
   assert(html.indexOf('id="zero-transfer"') > html.indexOf('id="demos"'));
   assert(html.indexOf('id="zero-transfer"') < html.indexOf('id="data"'));
   assert.match(html, /Long-Range Loco-Manipulation/);
-  assert.match(html, /Whole-Body Manipulation/);
+  assert.match(html, /Whole-Body Loco-Manipulation/);
   assert.match(html, /Human demonstration/);
   assert.match(html, /Aligned execution/);
   assert.match(html, /Unaligned replay/);

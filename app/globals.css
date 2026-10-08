@@ -141,8 +141,9 @@ p { margin-top: 0; }
 .paper-figure figcaption span { white-space: nowrap; color: var(--purple); }
 .humanverse-art { position: relative; aspect-ratio: 1704 / 659; }
 .humanverse-art > img { width: 100%; height: 100%; object-fit: contain; }
-.humanverse-art > object { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; transition: opacity 250ms ease; }
-.humanverse-art.is-ready > object { opacity: 1; }
+.humanverse-art > object, .humanverse-art > .offline-humanverse-svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; transition: opacity 250ms ease; }
+.offline-humanverse-svg > svg { display: block; width: 100%; height: 100%; }
+.humanverse-art.is-ready > object, .humanverse-art.is-ready > .offline-humanverse-svg { opacity: 1; }
 .humanverse-art.is-ready > img { opacity: 0; }
 .humanverse-controls:not([hidden]) { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
 .humanverse-controls button { border: 1px solid #d9cfe3; border-radius: 4px; padding: 7px 13px; background: transparent; color: var(--purple); font: 500 12px/1.4 var(--sans); cursor: pointer; }
@@ -150,7 +151,7 @@ p { margin-top: 0; }
 .humanverse-animation figcaption a { color: var(--purple); white-space: nowrap; }
 .reveal-pending { opacity: 0; }
 @media (prefers-reduced-motion: reduce) { .reveal-pending { opacity: 1; } }
-@media print { .reveal-pending { opacity: 1; } .humanverse-art > object, .humanverse-controls { display: none; } .humanverse-art.is-ready > img { opacity: 1; } }
+@media print { .reveal-pending { opacity: 1; } .humanverse-art > object, .humanverse-art > .offline-humanverse-svg, .humanverse-controls { display: none; } .humanverse-art.is-ready > img { opacity: 1; } }
 .modality-columns { display: grid; grid-template-columns: repeat(3,1fr); gap: 36px; margin-top: 42px; }
 .modality-columns h3 { font: 600 25px/1.3 var(--serif); margin-bottom: 12px; }
 .modality-columns p { color: var(--muted); font-size: 14px; margin: 0; }
@@ -162,11 +163,10 @@ p { margin-top: 0; }
 .pipeline { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin: 45px 0; }
 .stage-card { --stage-color: #8c75aa; position: relative; border-top: 2px solid var(--stage-color); padding: 25px 0 0; display: flex; flex-direction: column; }
 .stage-card.purple { --stage-color: #7a5195; } .stage-card.orange { --stage-color: #98703b; }
-.stage-topline { display: flex; justify-content: space-between; align-items: center; color: var(--stage-color); font-size: 12px; }
-.stage-topline i { width: 6px; height: 6px; border-radius: 50%; background: var(--stage-color); }
+.stage-topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; min-height: 38px; color: var(--stage-color); font-size: 12px; line-height: 1.5; }
+.stage-topline i { flex: 0 0 6px; width: 6px; height: 6px; margin-top: 6px; border-radius: 50%; background: var(--stage-color); }
 .stage-card h3 { margin: 24px 0 15px; font: 500 clamp(26px,2.5vw,36px)/1.15 var(--serif); }
 .stage-card p { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-.stage-detail { margin-top: auto; font-size: 11px; color: var(--stage-color); }
 .training-section .paper-figure figcaption { color: var(--muted); }
 .training-section .paper-figure figcaption span { color: var(--purple); }
 .deployment-note { display: grid; grid-template-columns: 1fr 3fr; gap: 30px; border-top: 1px solid #d3cddd; padding-top: 26px; }
@@ -517,10 +517,12 @@ footer { min-height: 96px; padding: 24px max(var(--page-gutter),calc((100vw - va
 .transfer-project-link .resource-icon { opacity: .65; }
 
 .bibtex-section { scroll-margin-top: calc(var(--header-height) + 24px); border-top: 1px solid var(--line); }
-.bibtex-panel { position: relative; width: min(100%, 900px); margin-top: 12px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); box-shadow: 0 12px 36px #15191d18; }
-.bibtex-panel pre { max-height: 280px; overflow: auto; padding: 16px; margin: 12px 0 0; background: white; border: 1px solid var(--line); font: 12px/1.6 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
-.bibtex-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-size: 13px; }
-.bibtex-actions button { border: 1px solid #b4a8bf; padding: 7px 12px; color: var(--purple); background: white; font: inherit; cursor: pointer; }
+.bibtex-section .section-intro { display: block; text-align: center; }
+.bibtex-section .section-intro > p { max-width: none; margin-top: 14px; }
+.bibtex-panel { width: min(100%, 900px); margin: 12px auto 0; padding: 20px; border: 1px solid #d9d3de; border-radius: 6px; }
+.bibtex-panel pre { margin: 18px 0 0; color: #77747d; font: 12px/1.7 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
+.bibtex-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; font-size: 13px; }
+.bibtex-actions button { border: 0; padding: 7px 0; color: var(--purple); background: transparent; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .bibtex-actions a { color: var(--purple); text-decoration: underline; text-underline-offset: 3px; }
 
 .hero .hero-resources { position: absolute; top: calc(100% + 28px); left: 0; right: 0; justify-content: center; margin-top: 0; }

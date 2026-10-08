@@ -63,7 +63,7 @@ test("server-renders the research project page", async () => {
   assert.match(html, /Scaling animation controls/);
   assert.match(html, /Scaling animation timeline/);
   assert.match(html, /Human-data scaling: validation loss/);
-  assert.doesNotMatch(html, /HumanVerse animation controls/);
+  assert.match(html, /HumanVerse animation controls/);
   assert.doesNotMatch(html, /humanverse-animated\.svg/);
   assert.match(html, /src="\/figures\/humanverse.webp"/);
   assert.doesNotMatch(html, /Human experience → humanoid control/);

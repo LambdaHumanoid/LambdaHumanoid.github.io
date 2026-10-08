@@ -5,6 +5,7 @@ import { LambdaMark } from "./LambdaMark";
 import { BibTeX } from "./BibTeX";
 import { ResourceIcon } from "./ResourceIcon";
 import { HeroMotion } from "./HeroMotion";
+import { HumanVerseAnimation } from "./HumanVerseAnimation";
 import { HeroReport } from "./HeroReport";
 import { PageTransitions } from "./PageTransitions";
 import { ZeroTransfer } from "./ZeroTransfer";
@@ -89,7 +90,7 @@ export default function Home() {
       <ZeroTransfer />
       <section className="content-section data-section" id="data">
         <div className="section-intro"><div><p className="section-label">HumanVerse-500</p><h2>Capture the body.<br />Keep the context.</h2></div><p>500 hours of robot-free capture across open-world scenes and tasks, pairing egocentric video with synchronized whole-body and hand motion.</p></div>
-        <PaperFigure name="humanverse" width={3200} height={1247} alt="HumanVerse-500: wearable capture setup, skill frequencies, five-ring activity distribution, and synchronized image–pose examples" caption="HumanVerse-500 spans everyday scenes, objects, and coordinated whole-body activities." />
+        <HumanVerseAnimation />
         <div className="dataset-motion"><HeroMotion /></div>
           <div className="dataset-motion dataset-retargeting"><HeroMotion comparison /></div>
         <div className="modality-columns"><article><h3>Egocentric vision</h3><p>A neck-mounted GoPro records first-person RGB at a height matched to the robot camera, retaining the objects and surroundings that give actions their context.</p></article><article><h3>24 body joints</h3><p>Wearable PICO tracking captures global displacement, posture, and coordinated body motion on a synchronized timeline.</p></article><article><h3>21 joints per hand</h3><p>Image-based hand reconstruction estimates articulated hand geometry, complementing directly tracked body motion.</p></article></div>
@@ -99,7 +100,7 @@ export default function Home() {
       </section>
       <section className="content-section training-section" id="training">
         <div className="section-intro"><div><p className="section-label">The λ₀ training recipe</p><h2>From interaction priors<br />to humanoid actions.</h2></div><p>A shared vision–language backbone and action expert learn across human and robot data, while embodiment-specific interfaces preserve their different physical meanings.</p></div>
-        <div className="pipeline">{stages.map(stage => <article className={`stage-card ${stage.color}`} key={stage.number}><div className="stage-topline"><span>Stage {stage.number}</span><i aria-hidden="true" /></div><h3>{stage.title}</h3><p>{stage.text}</p><span className="stage-detail">{stage.detail}</span></article>)}</div>
+        <div className="pipeline">{stages.map(stage => <article className={`stage-card ${stage.color}`} key={stage.number}><div className="stage-topline"><span>Stage {stage.number} · {stage.detail}</span><i aria-hidden="true" /></div><h3>{stage.title}</h3><p>{stage.text}</p></article>)}</div>
         <PaperFigure name="training" width={2400} height={757} alt="Three-stage architecture with Qwen3.5 vision-language backbone, action expert, and human and robot motion interfaces" caption="The shared model learns from human interactions, whole-body motion, and embodiment-specific demonstrations." />
         <div className="deployment-note"><h3>At deployment</h3><p>The policy takes the robot’s camera image, language instruction, and proprioception. It predicts whole-body motion tokens and hand commands; SONIC executes the body motion. Human tracking is used during data collection, not at deployment.</p></div>
       </section>
@@ -119,7 +120,7 @@ export default function Home() {
       </section>
       <section className="closing"><p className="section-label">Explore the research</p><h2>Human motion as a foundation<br />for humanoid control.</h2><p className="closing-copy">Read the full method, evaluation protocols, and experimental findings in the manuscript.</p><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a></section>
       <BibTeX />
-      <footer><a className="footer-brand" href="#top" aria-label="Introducing lambda-0 with HumanVerse-500"><span>Introducing</span><LambdaMark /><span>with HumanVerse-500</span></a><a className="footer-top" href="#top">Back to top ↑</a></footer>
+      <footer><a className="footer-brand" href="#top" aria-label="Lambda zero home"><LambdaMark /></a><a className="footer-top" href="#top">Back to top ↑</a></footer>
     </main>
   );
 }

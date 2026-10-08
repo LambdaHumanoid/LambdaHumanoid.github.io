@@ -22,15 +22,15 @@ test("server-renders the research project page", async () => {
 
   // Inspect rendered markup, excluding the duplicate text in hydration payloads.
   const html = (await response.text()).replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
-  assert.match(html, /Scaling Egocentric Human Data for General Humanoid Control/);
+  assert.match(html, /Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation/);
   assert.match(html, /HumanVerse-500/);
   assert.match(html, /Read the report/);
   assert.equal((html.match(/class="demo-scene"/g) ?? []).length, 3);
   assert.equal((html.match(/class="demo-video"/g) ?? []).length, 9);
   assert(html.indexOf('id="zero-transfer"') > html.indexOf('id="demos"'));
   assert(html.indexOf('id="zero-transfer"') < html.indexOf('id="data"'));
-  assert.match(html, /Navigation transfer/);
-  assert.match(html, /Manipulation transfer/);
+  assert.match(html, /Long-Range Loco-Manipulation/);
+  assert.match(html, /Whole-Body Manipulation/);
   assert.match(html, /Human demonstration/);
   assert.match(html, /Aligned execution/);
   assert.match(html, /Unaligned replay/);

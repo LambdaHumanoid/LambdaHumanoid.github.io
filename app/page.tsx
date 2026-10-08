@@ -8,9 +8,9 @@ import { ZeroTransfer } from "./ZeroTransfer";
 import { ablations, demoScenes, results, type DemoVideo } from "./research";
 
 const stages = [
-  { number: "I", title: "Learn interaction", text: "Pretrain on seven egocentric human datasets to learn object interaction and articulated hand motion across diverse activities.", detail: "Egocentric interaction pretraining", color: "lavender" },
-  { number: "II", title: "Learn coordination", text: "Mid-train on HumanVerse-500 to connect locomotion, posture, and hand motion. Paired human and robot-compatible views share the same observations.", detail: "Whole-body human mid-training", color: "purple" },
-  { number: "III", title: "Ground in the robot", text: "Post-train with task-aligned human and native robot demonstrations, grounding shared representations in executable humanoid actions.", detail: "Embodiment post-training", color: "orange" },
+  { number: "I", title: "Learn interaction", text: "Pretrain on seven egocentric human datasets to learn object interaction and articulated hand motion across diverse activities.", detail: "Egocentric Hand-Motion Pre-training", color: "lavender" },
+  { number: "II", title: "Learn coordination", text: "Mid-train on robot-aligned whole-body human data from HumanVerse-500. The robot-aligned data pipeline converts human demonstrations into the downstream robot observation and action spaces.", detail: "Robot-Aligned Whole-body Human Mid-training", color: "purple" },
+  { number: "III", title: "Ground in the robot", text: "Post-train with task-aligned human and native robot demonstrations, grounding shared representations in executable humanoid actions.", detail: "Robot Post-training", color: "orange" },
 ];
 
 function PaperFigure({ name, alt, caption, width, height }: { name: string; alt: string; caption: string; width: number; height: number }) {
@@ -55,7 +55,7 @@ export default function Home() {
       <section className="hero" id="top">
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
-          <h1><span className="sr-only">λ₀: </span><span className="hero-title">Scaling Egocentric Human Data for General Humanoid Control</span></h1>
+          <h1><span className="sr-only">λ₀: </span><span className="hero-title">Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation</span></h1>
           <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
         </div>
       </section>
@@ -78,11 +78,13 @@ export default function Home() {
       </section>
       <ZeroTransfer />
       <section className="content-section data-section" id="data">
-        <div className="section-intro"><div><p className="section-label">HumanVerse-500</p><h2>Capture the body.<br />Keep the context.</h2></div><p>500 hours of mobile human activity, collected with portable sensors in everyday spaces. Visual observations stay aligned with whole-body and hand motion.</p></div>
+        <div className="section-intro"><div><p className="section-label">HumanVerse-500</p><h2>Capture the body.<br />Keep the context.</h2></div><p>500 hours of robot-free capture across open-world scenes and tasks, pairing egocentric video with synchronized whole-body and hand motion.</p></div>
         <PaperFigure name="humanverse" width={3200} height={1247} alt="HumanVerse-500: wearable capture setup, skill frequencies, five-ring activity distribution, and synchronized image–pose examples" caption="HumanVerse-500 spans everyday scenes, objects, and coordinated whole-body activities." />
         <div className="dataset-motion"><HeroMotion /></div>
           <div className="dataset-motion dataset-retargeting"><HeroMotion comparison /></div>
-        <div className="modality-columns"><article><h3>Egocentric vision</h3><p>A chest-mounted GoPro records first-person RGB, retaining the objects and surroundings that give actions their context.</p></article><article><h3>24 body joints</h3><p>Wearable PICO tracking captures global displacement, posture, and coordinated body motion on a synchronized timeline.</p></article><article><h3>21 joints per hand</h3><p>Image-based hand reconstruction estimates articulated hand geometry, complementing directly tracked body motion.</p></article></div>
+        <div className="modality-columns"><article><h3>Egocentric vision</h3><p>A neck-mounted GoPro records first-person RGB at a height matched to the robot camera, retaining the objects and surroundings that give actions their context.</p></article><article><h3>24 body joints</h3><p>Wearable PICO tracking captures global displacement, posture, and coordinated body motion on a synchronized timeline.</p></article><article><h3>21 joints per hand</h3><p>Image-based hand reconstruction estimates articulated hand geometry, complementing directly tracked body motion.</p></article></div>
+        <div className="data-note"><strong>Robot-Aligned Data Pipeline</strong><p>Robot-Free Capture and Hardware–Software Co-Alignment connect human demonstrations to the downstream embodiment. Observation Alignment matches camera viewpoint and visual appearance; Action-Space Alignment constructs compatible robot states and executable motion targets.</p></div>
+        <div className="data-note"><strong>Efficient Robot-Free Collection</strong><p>Estimated time per demo: approximately 70 s robot / 33 s human for whole-body manipulation, and 130 s robot / 25 s human for long-range loco-manipulation. Equal weighting gives approximately 100 s versus 29 s, or 3.4× collection throughput across these representative families.</p></div>
         <div className="data-note"><strong>Separate data for embodiment grounding.</strong><p>An additional 600 task-aligned human demonstrations—150 per task—are reserved for Stage III and excluded from the 500-hour mid-training pool. Sessions are split before temporal windows are constructed.</p></div>
       </section>
       <section className="content-section training-section" id="training">
@@ -101,7 +103,7 @@ export default function Home() {
         <details className="research-details"><summary>Training-stage ablations</summary><p>All variants retain vision–language initialization and Stage III. Removing Stage II causes a larger real-world success drop than removing Stage I.</p><div className="table-scroll" tabIndex={0} role="region" aria-label="Training-stage ablations table"><table className="results-table ablation-table"><caption className="sr-only">Real-world training-stage ablations</caption><thead><tr><th scope="col">Training recipe</th><th scope="col">Success (%)</th><th scope="col">Progress (%)</th></tr></thead><tbody>{ablations.map(row => <tr key={row.name} className={row.name === "Full recipe" ? "ours" : undefined}><th scope="row">{row.name}<small>{row.description}</small></th><td>{row.success.toFixed(1)}</td><td>{row.progress.toFixed(1)}</td></tr>)}</tbody></table></div></details>
       </section>
       <section className="content-section scaling-section" id="scaling">
-        <div className="section-intro"><div><p className="section-label">Human-data scaling</p><h2>More experience.<br />Lower validation loss.</h2></div><p>With a fixed 2B model and 100k Stage-II updates, nested human-data subsets let us study how data quantity changes learning.</p></div>
+        <div className="section-intro"><div><p className="section-label">Human Data Scaling</p><h2>More experience.<br />Lower validation loss.</h2></div><p>With a fixed 2B model and 100k Stage-II updates, nested human-data subsets let us study how data quantity changes learning.</p></div>
         <ScalingAnimation />
         <div className="scaling-findings"><article><h3>Two fixed holdouts</h3><p>From 5% to 100% data, minimum loss decreases by <strong>35.5%</strong> on the representative holdout and <strong>40.6%</strong> on the clean holdout. Both are disjoint from training sessions.</p><p className="section-note">One run per scale. These validation curves do not establish cross-seed reproducibility or improved robot control at every scale.</p></article><article><h3>Downstream task progress</h3><div className="endpoint-comparison"><div><span>No Stage II</span><strong>59.9<small>%</small></strong></div><span className="endpoint-gain">+20.5 pts</span><div><span>Full recipe</span><strong>80.4<small>%</small></strong></div></div><p>The measured real-world endpoints show a gain from Stage II. Evaluations at 5%, 10%, 25%, and 50% are pending, so intermediate-scale trends remain unestablished.</p></article></div>
       </section>

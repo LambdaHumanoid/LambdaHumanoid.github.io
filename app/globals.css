@@ -54,7 +54,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .hero h1 { margin: 0; max-width: 1280px; color: var(--purple); font: 560 clamp(32px, 3.7vw, 50px)/1.16 var(--sans); letter-spacing: -.045em; text-wrap: balance; }
 .hero-title, .hero-subtitle { background: linear-gradient(105deg, #91abc8 0%, #859fc9 20%, #8c91cc 42%, #9582c5 62%, #8074b8 78%, #513ecb 100%); background-clip: text; -webkit-background-clip: text; color: transparent; }
 @media (min-width: 761px) {
-  .hero-title { white-space: nowrap; font-size: min(1em, 3.8cqw); }
+  .hero-title { display: block; white-space: normal; text-wrap: balance; font-size: min(1em, 3.8cqw); }
 }
 .hero-model-mark { background: linear-gradient(125deg, #91abc8 0%, #a0a4d5 28%, #b5a4dc 52%, #a08bd3 76%, #8872c7 100%); background-clip: text; -webkit-background-clip: text; color: transparent; }
 .hero-subtitle { display: block; width: fit-content; max-width: 100%; margin-top: 24px; font-weight: 500; }

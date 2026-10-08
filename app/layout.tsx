@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation",
+  title: "λ₀: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation",
   icons: { icon: { url: "/favicon.svg", type: "image/svg+xml" } },
   description:
     "λ₀ learns humanoid loco-manipulation from HumanVerse-500: 500 hours of whole-body human activity, a three-stage training recipe, and four real-world tasks.",

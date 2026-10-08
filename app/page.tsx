@@ -55,7 +55,13 @@ export default function Home() {
       <section className="hero" id="top">
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
-          <h1><span className="sr-only">λ₀: </span><span className="hero-title">Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation</span></h1>
+          <h1><span className="hero-title">λ₀: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation</span></h1>
+          <div className="hero-resources" role="group" aria-label="Research resources">
+            <a href="/paper.pdf" target="_blank" rel="noreferrer">Report <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/LambdaHumanoid/openlambda" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <span className="resource-pending" aria-disabled="true">Hugging Face <small>Coming soon</small></span>
+            <span className="resource-pending" aria-disabled="true">BibTeX <small>Coming soon</small></span>
+          </div>
           <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
         </div>
       </section>

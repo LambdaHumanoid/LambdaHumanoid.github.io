@@ -61,6 +61,10 @@ export function ZeroTransfer() {
   const task = manipulation[selectedTask];
   return <section className="content-section transfer-section" id="zero-transfer" aria-labelledby="transfer-title">
     <div className="section-intro"><div><p className="section-label">Zero-Shot Transfer on Unitree G1</p><h2 id="transfer-title">Whole-body coordination.<br />Long-range interaction.</h2></div><p>Aligned human task demonstrations support G1 control without target-task robot demonstrations. These evaluations validate the robot-aligned data pipeline across two representative task families.</p></div>
+    <div className="transfer-project-links" role="group" aria-label="Zero-shot transfer projects">
+      <a href="https://opendrivelab.com/EgoHumanoid-V2/" target="_blank" rel="noreferrer">EgoHumanoid-V2 <span aria-hidden="true">↗</span></a>
+      <a href="https://lambdahumanoid.github.io/EgoAlign/" target="_blank" rel="noreferrer">EgoAlign <span aria-hidden="true">↗</span></a>
+    </div>
     <section className="transfer-block" aria-labelledby="navigation-transfer-title">
       <div className="transfer-heading"><h3 id="navigation-transfer-title">Long-Range Loco-Manipulation</h3><p>76.2% progress across relocation, navigation, and foot interaction, averaging seen and unseen target locations. Videos also illustrate targets moved during execution.</p></div>
       <div className="transfer-navigation-grid">{navigation.map(item => <NavigationExample key={item.id} task={item} />)}</div>

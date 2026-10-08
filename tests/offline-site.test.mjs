@@ -16,10 +16,10 @@ test('GitHub Pages root serves the project directly with local resources', async
 
 test('offline page has local resources, nine demos, and neutral project branding', async () => {
   const html = await readFile(new URL('index.html', root), 'utf8');
-  assert.match(html, /<title>Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation<\/title>/);
+  assert.match(html, /<title>λ₀: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation<\/title>/);
   assert.doesNotMatch(html, /ICLR|Anonymous submission|Anonymous Authors|submission-badge|submission-footer/i);
   assert.doesNotMatch(html, /Video coming soon/);
-  assert.equal((html.match(/href="\.\/paper\.pdf"/g) ?? []).length, 1);
+  assert.equal((html.match(/href="\.\/paper\.pdf"/g) ?? []).length, 2);
   assert.equal((html.match(/class="demo-video"/g) ?? []).length, 9);
   const assets = [...html.matchAll(/(?:src|href)="(\.\/[^"?#]+)(?:\?[^"#]*)?"/g)].map(match => match[1]);
   assert(assets.length > 20);

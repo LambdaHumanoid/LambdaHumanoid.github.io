@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { citations } from "./citations";
+import { ResourceIcon } from "./ResourceIcon";
 
 export function BibTeX() {
   const [status, setStatus] = useState("");
@@ -16,7 +17,7 @@ export function BibTeX() {
   }
 
   return <details className="bibtex-resource">
-    <summary>BibTeX</summary>
+    <summary><ResourceIcon kind="citation" /><span>BibTeX</span><ResourceIcon kind="chevron" /></summary>
     <div className="bibtex-panel">
       <h2>Cite λ₀, EgoHumanoid-V2, and EgoAlign</h2>
       <p>Official arXiv citations. The λ₀ entry retains its current arXiv title.</p>

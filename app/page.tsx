@@ -3,6 +3,7 @@ import { AmbientWaves } from "./AmbientWaves";
 import { ScalingAnimation } from "./ScalingAnimation";
 import { LambdaMark } from "./LambdaMark";
 import { BibTeX } from "./BibTeX";
+import { ResourceIcon } from "./ResourceIcon";
 import { HeroMotion } from "./HeroMotion";
 import { PageTransitions } from "./PageTransitions";
 import { ZeroTransfer } from "./ZeroTransfer";
@@ -58,9 +59,9 @@ export default function Home() {
         <div className="hero-content">
           <h1><span className="hero-title">λ₀: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation</span></h1>
           <div className="hero-resources" role="group" aria-label="Research resources">
-            <a href="/paper.pdf" target="_blank" rel="noreferrer">Report <span aria-hidden="true">↗</span></a>
-            <a href="https://github.com/LambdaHumanoid/openlambda" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-            <span className="resource-pending" aria-disabled="true">Hugging Face <small>Coming soon</small></span>
+            <a className="resource-link resource-report" href="/paper.pdf" target="_blank" rel="noreferrer"><ResourceIcon kind="report" /><span>Report</span><ResourceIcon kind="external" /></a>
+            <a className="resource-link" href="https://github.com/LambdaHumanoid/openlambda" target="_blank" rel="noreferrer"><ResourceIcon kind="github" /><span>GitHub</span><ResourceIcon kind="external" /></a>
+            <span className="resource-pending" aria-disabled="true"><span className="resource-huggingface" aria-hidden="true">🤗</span><span>Hugging Face</span><small>Soon</small></span>
             <BibTeX />
           </div>
           <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>

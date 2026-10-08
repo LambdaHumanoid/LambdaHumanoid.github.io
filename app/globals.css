@@ -42,7 +42,8 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .site-header { position: fixed; z-index: 30; inset: 0 0 auto; height: 72px; padding-inline: max(var(--page-gutter), calc((100vw - var(--page-max)) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #15191d19; background: #f6f7f5ef; backdrop-filter: blur(14px); }
 .lambda { font: 700 32px/1 var(--serif); }
 .brand.lambda { display: inline-flex; align-items: center; }
-.brand.lambda svg { display: block; width: 164px; height: 44px; }
+.brand.lambda svg { display: block; width: 112px; height: 30px; opacity: .78; filter: grayscale(1); transition: opacity 180ms ease; }
+.brand.lambda:hover svg { opacity: 1; }
 .site-header nav { display: flex; align-items: center; gap: 30px; font-size: 13px; font-weight: 500; }
 .site-header nav a { padding-block: 12px; }
 .site-header nav a:hover, .paper-link:hover { color: var(--purple); }
@@ -484,20 +485,25 @@ footer { min-height: 96px; padding: 24px max(var(--page-gutter),calc((100vw - va
   .motion-human-gallery > .motion-heading { font-size: 14px; gap: 10px; }
 }
 
-.hero-resources { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 30px; }
-.hero-resources > a, .resource-pending { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 9px 16px; border: 1px solid #b4a8bf; background: #f6f7f588; font-size: 14px; font-weight: 600; }
-.hero-resources > a:hover { color: var(--purple); background: white; }
-.resource-pending { color: var(--muted); border-color: var(--line); }
-.resource-pending small { font-size: 11px; font-weight: 400; }
+/* Compact resource controls share one visual rhythm beneath the title. */
+.hero-resources { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 30px; }
+.hero-resources > a, .resource-pending, .bibtex-resource summary { display: inline-flex; align-items: center; gap: 9px; min-height: 42px; padding: 10px 15px; border: 1px solid #dedbe3; border-radius: 10px; background: #ffffff80; color: #51495b; font-size: 13px; line-height: 20px; font-weight: 550; white-space: nowrap; }
+.hero-resources > a, .bibtex-resource summary { transition: background 180ms ease, border-color 180ms ease, color 180ms ease; }
+.hero-resources > .resource-report { background: #ede7f4b3; border-color: #dcd0e8; color: #694c84; }
+.hero-resources > a:hover, .bibtex-resource summary:hover, .bibtex-resource[open] summary { color: #62437e; background: #f0eaf7; border-color: #cbbbdc; }
+.resource-icon { display: block; flex: 0 0 18px; }
+.resource-icon-external, .resource-icon-chevron { width: 14px; height: 14px; flex-basis: 14px; opacity: .55; margin-left: 2px; }
+.resource-pending { color: #79757f; background: transparent; border-color: #e3e1e6; }
+.resource-pending small { padding: 1px 6px; border-radius: 4px; background: #e9e7ed; color: #79727f; font-size: 9px; font-weight: 500; line-height: 16px; }
+.resource-huggingface { font-size: 17px; line-height: 18px; opacity: .65; filter: grayscale(.65); }
 .transfer-project-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: -12px 0 36px; color: var(--purple); font-size: 15px; font-weight: 600; }
 .transfer-project-links a { padding-block: 6px; text-decoration: underline; text-underline-offset: 4px; }
 
-.hero-resources { position: relative; }
-.bibtex-resource summary { display: inline-flex; align-items: center; min-height: 44px; padding: 9px 16px; border: 1px solid #b4a8bf; background: #f6f7f588; font-size: 14px; font-weight: 600; cursor: pointer; list-style: none; }
+.bibtex-resource summary { cursor: pointer; list-style: none; }
 .bibtex-resource summary::-webkit-details-marker { display: none; }
-.bibtex-resource summary:hover, .bibtex-resource[open] summary { color: var(--purple); background: white; }
+.bibtex-resource[open] .resource-icon-chevron { transform: rotate(180deg); }
 .bibtex-resource[open] { flex-basis: 100%; }
-.bibtex-panel { position: relative; width: min(100%, 900px); margin-top: 12px; padding: 20px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 36px #15191d18; }
+.bibtex-panel { position: relative; width: min(100%, 900px); margin-top: 12px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); box-shadow: 0 12px 36px #15191d18; }
 .bibtex-panel h2 { font: 600 18px/1.4 var(--sans); letter-spacing: 0; }
 .bibtex-panel p { margin: 8px 0 12px; color: var(--muted); font-size: 13px; }
 .bibtex-panel pre { max-height: 280px; overflow: auto; padding: 16px; margin: 12px 0 0; background: white; border: 1px solid var(--line); font: 12px/1.6 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }

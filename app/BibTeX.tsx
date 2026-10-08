@@ -16,7 +16,7 @@ export function BibTeX() {
   }
 
   return <section className="content-section bibtex-section" id="bibtex" aria-labelledby="bibtex-title">
-    <div className="section-intro"><div><p className="section-label">Citation</p><h2 id="bibtex-title">BibTeX</h2></div><p>Cite λ₀, EgoHumanoid-V2, and EgoAlign using their official arXiv entries.</p></div>
+    <div className="section-intro"><h2 id="bibtex-title">BibTeX</h2><p>Cite λ₀, EgoHumanoid-V2, and EgoAlign using their official arXiv entries.</p></div>
     <div className="bibtex-panel">
       <div className="bibtex-actions">
         <button type="button" onClick={copy}>Copy all</button>

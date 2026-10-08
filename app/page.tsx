@@ -5,6 +5,7 @@ import { LambdaMark } from "./LambdaMark";
 import { BibTeX } from "./BibTeX";
 import { ResourceIcon } from "./ResourceIcon";
 import { HeroMotion } from "./HeroMotion";
+import { HeroReport } from "./HeroReport";
 import { PageTransitions } from "./PageTransitions";
 import { ZeroTransfer } from "./ZeroTransfer";
 import { ablations, demoScenes, results, type DemoVideo } from "./research";
@@ -55,16 +56,17 @@ export default function Home() {
         <nav aria-label="Primary navigation"><a href="#overview">Overview</a><a href="#demos">Demos</a><a href="#data">Data</a><a href="#training">Method</a><a href="#evaluation">Results</a></nav>
       </header>
       <section className="hero" id="top">
+        <HeroReport />
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
-          <h1><span className="hero-title">λ₀: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation</span></h1>
+          <h1><span className="hero-title">Scaling Open-World Egocentric Human Data <br />for Humanoid Loco-Manipulation</span></h1>
           <div className="hero-resources" role="group" aria-label="Research resources">
             <a className="resource-link resource-report" href="/paper.pdf" target="_blank" rel="noreferrer"><ResourceIcon kind="report" /><span>Report</span><ResourceIcon kind="external" /></a>
             <a className="resource-link" href="https://github.com/LambdaHumanoid/openlambda" target="_blank" rel="noreferrer"><ResourceIcon kind="github" /><span>GitHub</span><ResourceIcon kind="external" /></a>
             <span className="resource-pending" aria-disabled="true"><span className="resource-huggingface" aria-hidden="true">🤗</span><span>Hugging Face</span><small>Soon</small></span>
             <BibTeX />
           </div>
-          <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
+          <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a><a className="button quiet" href="/videos/report-video.mp4?v=e501883b93" target="_blank" rel="noreferrer">Watch the report <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
       <section className="thesis" id="overview">

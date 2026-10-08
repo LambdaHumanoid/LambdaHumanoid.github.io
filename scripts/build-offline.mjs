@@ -72,6 +72,10 @@ await fs.copyFile(path.join(root, 'public/favicon.svg'), path.join(target, 'favi
 await fs.copyFile(path.join(root, 'public/paper.pdf'), path.join(target, 'paper.pdf'));
 await fs.copyFile(path.join(root, 'public/citations.bib'), path.join(target, 'citations.bib'));
 await fs.copyFile(path.join(root, 'public/figures/lambda-humanoid.png'), path.join(target, 'figures/lambda-humanoid.png'));
+await fs.mkdir(path.join(target, 'videos'), { recursive: true });
+for (const name of ['report-video.mp4', 'report-video-poster.jpg']) {
+  await fs.copyFile(path.join(root, 'public/videos', name), path.join(target, 'videos', name));
+}
 const { default: server } = await import(pathToFileURL(path.join(root, 'dist/server/index.js')).href);
 const response = await server.fetch(
   new Request('http://localhost/', { headers: { accept: 'text/html' } }),

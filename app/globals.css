@@ -517,8 +517,11 @@ footer { min-height: 96px; padding: 24px max(var(--page-gutter),calc((100vw - va
 .transfer-project-link .resource-icon { opacity: .65; }
 
 .bibtex-section { scroll-margin-top: calc(var(--header-height) + 24px); border-top: 1px solid var(--line); }
-.bibtex-section .section-intro { display: block; text-align: center; }
-.bibtex-section .section-intro > p { max-width: none; margin-top: 14px; }
+.bibtex-section .section-intro { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 10px 22px; text-align: center; }
+.bibtex-section .section-intro > div { display: flex; align-items: baseline; gap: 18px; }
+.bibtex-section .section-label { margin: 0; }
+.bibtex-section .section-intro > p { max-width: none; margin: 0; white-space: nowrap; }
+@media (max-width: 760px) { .bibtex-section .section-intro > p { white-space: normal; } }
 .bibtex-panel { width: min(100%, 900px); margin: 12px auto 0; padding: 20px; border: 1px solid #d9d3de; border-radius: 6px; }
 .bibtex-panel pre { margin: 18px 0 0; color: #77747d; font: 12px/1.7 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
 .bibtex-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; font-size: 13px; }

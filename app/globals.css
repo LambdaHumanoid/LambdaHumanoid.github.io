@@ -491,3 +491,16 @@ footer { min-height: 96px; padding: 24px max(var(--page-gutter),calc((100vw - va
 .resource-pending small { font-size: 11px; font-weight: 400; }
 .transfer-project-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: -12px 0 36px; color: var(--purple); font-size: 15px; font-weight: 600; }
 .transfer-project-links a { padding-block: 6px; text-decoration: underline; text-underline-offset: 4px; }
+
+.hero-resources { position: relative; }
+.bibtex-resource summary { display: inline-flex; align-items: center; min-height: 44px; padding: 9px 16px; border: 1px solid #b4a8bf; background: #f6f7f588; font-size: 14px; font-weight: 600; cursor: pointer; list-style: none; }
+.bibtex-resource summary::-webkit-details-marker { display: none; }
+.bibtex-resource summary:hover, .bibtex-resource[open] summary { color: var(--purple); background: white; }
+.bibtex-resource[open] { flex-basis: 100%; }
+.bibtex-panel { position: relative; width: min(100%, 900px); margin-top: 12px; padding: 20px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 36px #15191d18; }
+.bibtex-panel h2 { font: 600 18px/1.4 var(--sans); letter-spacing: 0; }
+.bibtex-panel p { margin: 8px 0 12px; color: var(--muted); font-size: 13px; }
+.bibtex-panel pre { max-height: 280px; overflow: auto; padding: 16px; margin: 12px 0 0; background: white; border: 1px solid var(--line); font: 12px/1.6 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
+.bibtex-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-size: 13px; }
+.bibtex-actions button { border: 1px solid #b4a8bf; padding: 7px 12px; color: var(--purple); background: white; font: inherit; cursor: pointer; }
+.bibtex-actions a { color: var(--purple); text-decoration: underline; text-underline-offset: 3px; }

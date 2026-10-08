@@ -6,7 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const target = path.resolve(process.argv[2] ?? path.join(root, 'offline-site'));
 const offline = path.join(target, 'offline');
 await fs.mkdir(path.join(offline, 'assets'), {recursive:true});
-const relativePaths = s => s.replace(/(["'`])\/(motion|videos|figures|paper\.pdf)(?=[/"'`?])/g, '$1./$2');
+const relativePaths = s => s.replace(/(["'`])\/(motion|videos|figures|paper\.pdf|citations\.bib)(?=[/"'`?])/g, '$1./$2');
 const patch = (s, from, to) => { if (!s.includes(from)) throw new Error('Source changed: '+from.slice(0,70)); return s.replace(from,to); };
 const workerResult = await build({entryPoints:[path.join(root,'app/robot-model.worker.ts')],bundle:true,write:false,format:'iife',minify:true,target:'es2022',plugins:[{name:'offline-worker',setup(b){b.onLoad({filter:/robot-model\.worker\.ts$/},async args=>({contents:(await fs.readFile(args.path,'utf8')).replace('const response = await fetch(url);','const response = new Response(url);'),loader:'ts'}));}}]});
 const worker = workerResult.outputFiles[0].text;
@@ -70,6 +70,7 @@ for(const name of required) {
 const entry=path.join(target,'index.html');
 await fs.copyFile(path.join(root, 'public/favicon.svg'), path.join(target, 'favicon.svg'));
 await fs.copyFile(path.join(root, 'public/paper.pdf'), path.join(target, 'paper.pdf'));
+await fs.copyFile(path.join(root, 'public/citations.bib'), path.join(target, 'citations.bib'));
 await fs.copyFile(path.join(root, 'public/figures/lambda-humanoid.png'), path.join(target, 'figures/lambda-humanoid.png'));
 const { default: server } = await import(pathToFileURL(path.join(root, 'dist/server/index.js')).href);
 const response = await server.fetch(

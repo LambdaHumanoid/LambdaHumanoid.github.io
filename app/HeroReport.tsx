@@ -2,18 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const SILENT_LOOP_START = 17;
-const SILENT_LOOP_END = 34;
-
-function keepSilentPreviewInRange(movie: HTMLVideoElement) {
-  if (movie.muted && movie.readyState && (movie.currentTime < SILENT_LOOP_START || movie.currentTime >= SILENT_LOOP_END)) {
-    movie.currentTime = SILENT_LOOP_START;
-  }
-}
-
 export function HeroReport() {
   const report = useRef<HTMLDivElement>(null);
-  const video = useRef<HTMLVideoElement>(null);
+  const fullVideo = useRef<HTMLVideoElement>(null);
   const [soundOn, setSoundOn] = useState(false);
   const [showSoundButton, setShowSoundButton] = useState(false);
 
@@ -46,9 +37,8 @@ export function HeroReport() {
       element.style.setProperty("--video-wash", `${.12 * (1 - reveal)}`);
       const showButton = reveal >= .95 && resize >= .95 && hero.getBoundingClientRect().bottom >= window.innerHeight * .5;
       setShowSoundButton(showButton);
-      if (!showButton && video.current && !video.current.muted) {
-        video.current.muted = true;
-        keepSilentPreviewInRange(video.current);
+      if (!showButton && fullVideo.current && !fullVideo.current.paused) {
+        fullVideo.current.pause();
         setSoundOn(false);
       }
     };
@@ -64,26 +54,28 @@ export function HeroReport() {
   }, []);
 
   function toggleSound() {
-    const movie = video.current;
+    const movie = fullVideo.current;
     if (!movie) return;
     if (soundOn) {
-      movie.muted = true;
-      keepSilentPreviewInRange(movie);
+      movie.pause();
       setSoundOn(false);
       return;
     }
     if (movie.readyState) movie.currentTime = 0;
-    movie.muted = false;
-    void movie.play().then(() => setSoundOn(true)).catch(() => { movie.muted = true; setSoundOn(false); });
+    void movie.play().then(() => setSoundOn(true)).catch(() => setSoundOn(false));
   }
 
   return (
     <div className="hero-report" ref={report}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/videos/report-video-poster.jpg?v=96939befdd" alt="" />
+      <img src="/videos/report-video-poster.jpg?v=566909a039" alt="" />
+      {/* The silent preview contains no audio track. */}
+      <video autoPlay muted loop playsInline preload="auto" poster="/videos/report-video-poster.jpg?v=566909a039" tabIndex={-1} aria-hidden="true" style={{ visibility: soundOn ? "hidden" : "visible" }}>
+        <source src="/videos/report-preview-17-34.mp4?v=7b1f529ef4" type="video/mp4" />
+      </video>
       {/* The supplied video has subtitles burned into the picture. */}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video ref={video} autoPlay muted={!soundOn} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=96939befdd" tabIndex={-1} aria-hidden="true" onLoadedMetadata={event => keepSilentPreviewInRange(event.currentTarget)} onTimeUpdate={event => keepSilentPreviewInRange(event.currentTarget)} onEnded={event => { if (event.currentTarget.muted) { event.currentTarget.currentTime = SILENT_LOOP_START; void event.currentTarget.play(); } }}>
+      <video ref={fullVideo} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=566909a039" tabIndex={-1} aria-hidden="true" style={{ visibility: soundOn ? "visible" : "hidden" }} onEnded={() => setSoundOn(false)}>
         <source src="/videos/report-video.mp4?v=129775da9e" type="video/mp4" />
       </video>
       {showSoundButton && <button className={`hero-report-sound${soundOn ? " is-playing" : ""}`} type="button" onClick={toggleSound} aria-pressed={soundOn}>{soundOn ? "Mute Sound" : "Watch Video with Sound"}</button>}

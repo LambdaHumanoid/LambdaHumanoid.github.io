@@ -73,11 +73,11 @@ export function HeroReport() {
   return (
     <div className="hero-report" ref={report}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/videos/report-video-poster.jpg?v=193d1c943b" alt="" />
+      <img src="/videos/report-video-poster.jpg?v=6523178539" alt="" />
       {/* The supplied video has subtitles burned into the picture. */}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video ref={video} autoPlay muted={!soundOn} loop={!soundOn} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=193d1c943b" tabIndex={-1} aria-hidden="true" onTimeUpdate={event => { if (event.currentTarget.muted && event.currentTarget.currentTime >= SILENT_LOOP_SECONDS) event.currentTarget.currentTime = 0; }}>
-        <source src="/videos/report-video.mp4?v=e501883b93" type="video/mp4" />
+      <video ref={video} autoPlay muted={!soundOn} loop={!soundOn} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=6523178539" tabIndex={-1} aria-hidden="true" onTimeUpdate={event => { if (event.currentTarget.muted && event.currentTarget.currentTime >= SILENT_LOOP_SECONDS) event.currentTarget.currentTime = 0; }}>
+        <source src="/videos/report-video.mp4?v=d030191b7e" type="video/mp4" />
       </video>
       {showSoundButton && <button className={`hero-report-sound${soundOn ? " is-playing" : ""}`} type="button" onClick={toggleSound} aria-pressed={soundOn}>{soundOn ? "Mute Sound" : "Watch Video with Sound"}</button>}
     </div>

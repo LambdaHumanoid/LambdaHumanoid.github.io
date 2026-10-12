@@ -17,10 +17,10 @@ const stages = [
   { number: "III", title: "Ground in the robot", text: "Post-train with task-aligned human and native robot demonstrations, grounding shared representations in executable humanoid actions.", detail: "Robot Post-training", color: "orange" },
 ];
 
-function PaperFigure({ name, alt, caption, width, height, version }: { name: string; alt: string; caption: string; width: number; height: number; version?: string }) {
+function PaperFigure({ name, alt, caption, width, height, version, className = "" }: { name: string; alt: string; caption: string; width: number; height: number; version?: string; className?: string }) {
   const imageUrl = `/figures/${name}.webp${version ? `?v=${version}` : ""}`;
   return (
-    <figure className="paper-figure">
+    <figure className={`paper-figure ${className}`.trim()}>
       <a href={imageUrl} target="_blank" rel="noreferrer" aria-label={`Open full-size figure: ${alt}`}>
         {/* Static, pre-compressed paper figures; preserve their native proportions. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -59,6 +59,7 @@ export default function Home() {
       </header>
       <section className="hero" id="top">
         <HeroReport />
+        <span className="hero-video-anchor" id="report-video" aria-hidden="true" />
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
           <h1><span className="hero-title">Scaling Open-World Egocentric Human Data <br />for Humanoid Loco-Manipulation</span></h1>
@@ -68,7 +69,7 @@ export default function Home() {
             <span className="resource-pending" aria-disabled="true"><span className="resource-huggingface" aria-hidden="true">🤗</span><span>Hugging Face</span><small>Soon</small></span>
             <a className="resource-link" href="#bibtex"><ResourceIcon kind="citation" /><span>BibTeX</span><ResourceIcon kind="chevron" /></a>
           </div>
-          <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a><a className="button quiet" href="/videos/report-video.mp4?v=e501883b93" target="_blank" rel="noreferrer">Watch video <span aria-hidden="true">↗</span></a></div>
+          <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a><a className="button quiet" href="#report-video">Watch video <span aria-hidden="true">↓</span></a></div>
         </div>
       </section>
       <section className="thesis" id="overview">
@@ -96,7 +97,7 @@ export default function Home() {
           <div className="dataset-motion dataset-retargeting"><HeroMotion comparison /></div>
         <div className="modality-columns"><article><h3>Egocentric vision</h3><p>A neck-mounted GoPro records first-person RGB at a height matched to the robot camera, retaining the objects and surroundings that give actions their context.</p></article><article><h3>24 body joints</h3><p>Wearable PICO tracking captures global displacement, posture, and coordinated body motion on a synchronized timeline.</p></article><article><h3>21 joints per hand</h3><p>Image-based hand reconstruction estimates articulated hand geometry, complementing directly tracked body motion.</p></article></div>
         <div className="data-note"><strong>Robot-Aligned Data Pipeline</strong><p>Observation alignment matches the egocentric camera to the robot view. For action-space alignment, the three steps below correct the human reference, fit a robot reference through whole-body IK and SONIC rollout, then refine motion with dynamics-aware optimization.</p></div>
-        <PaperFigure name="alignment" width={2242} height={857} alt="Three-stage alignment pipeline: human-reference alignment, robot-reference alignment, and dynamics-aware optimization" caption="The alignment pipeline turns human motion into robot-compatible motion through human-reference correction, robot-reference alignment, and dynamics-aware refinement." />
+        <PaperFigure name="alignment" className="alignment-figure" version="20261012-transparent" width={2242} height={857} alt="Three-stage alignment pipeline: human-reference alignment, robot-reference alignment, and dynamics-aware optimization" caption="The alignment pipeline turns human motion into robot-compatible motion through human-reference correction, robot-reference alignment, and dynamics-aware refinement." />
         <div className="data-note"><strong>Efficient Robot-Free Collection</strong><p>Estimated time per demo: approximately 70 s robot / 33 s human for whole-body manipulation, and 130 s robot / 25 s human for long-range loco-manipulation. Equal weighting gives approximately 100 s versus 29 s, or 3.4× collection throughput across these representative families.</p></div>
         <div className="data-note"><strong>Separate data for embodiment grounding.</strong><p>An additional 600 task-aligned human demonstrations—150 per task—are reserved for Stage III and excluded from the 500-hour mid-training pool. Sessions are split before temporal windows are constructed.</p></div>
       </section>
@@ -118,10 +119,10 @@ export default function Home() {
       <section className="content-section scaling-section" id="scaling">
         <div className="section-intro"><div><p className="section-label">Human Data Scaling</p><h2>More experience.<br />Lower validation loss.</h2></div><p>With a fixed 2B model and 100k Stage-II updates, nested human-data subsets let us study how data quantity changes learning.</p></div>
         <ScalingAnimation />
-        <div className="scaling-findings"><article><h3>Two fixed holdouts</h3><p>From 5% to 100% data, minimum loss decreases by <strong>35.5%</strong> on the representative holdout and <strong>40.6%</strong> on the clean holdout. Both are disjoint from training sessions.</p><p className="section-note">One run per scale. These validation curves do not establish cross-seed reproducibility or improved robot control at every scale.</p></article><article><h3>Downstream task progress</h3><div className="endpoint-comparison"><div><span>No Stage II</span><strong>59.9<small>%</small></strong></div><span className="endpoint-gain">+20.5 pts</span><div><span>Full recipe</span><strong>80.4<small>%</small></strong></div></div><p>The measured real-world endpoints show a gain from Stage II. Evaluations at 5%, 10%, 25%, and 50% are pending, so intermediate-scale trends remain unestablished.</p></article></div>
+        <div className="scaling-findings"><article><h3>Two fixed holdouts</h3><p>From 5% to 100% data, minimum loss decreases by <strong>35.5%</strong> on the representative holdout and <strong>40.6%</strong> on the clean holdout. Both are disjoint from training sessions.</p></article><article><h3>Downstream task progress</h3><div className="endpoint-comparison"><div><span>No Stage II</span><strong>59.9<small>%</small></strong></div><span className="endpoint-gain">+20.5 pts</span><div><span>Full recipe</span><strong>80.4<small>%</small></strong></div></div><p>The measured real-world endpoints show a gain from Stage II. Evaluations at 5%, 10%, 25%, and 50% are pending, so intermediate-scale trends remain unestablished.</p></article></div>
       </section>
-      <section className="closing"><p className="section-label">Explore the research</p><h2>Human motion as a foundation<br />for humanoid control.</h2><p className="closing-copy">Read the full method, evaluation protocols, and experimental findings in the manuscript.</p><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a></section>
       <BibTeX />
+      <section className="closing"><p className="section-label">Explore the research</p><h2>Human motion as a foundation<br />for humanoid control.</h2><p className="closing-copy">Read the full method, evaluation protocols, and experimental findings in the manuscript.</p><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a></section>
       <footer><a className="footer-brand" href="#top" aria-label="Lambda zero home"><LambdaMark /></a><a className="footer-top" href="#top">Back to top ↑</a></footer>
     </main>
   );

@@ -66,8 +66,12 @@ test("server-renders the research project page", async () => {
   assert.match(html, /HumanVerse animation controls/);
   assert.doesNotMatch(html, /humanverse-animated\.svg/);
   assert.match(html, /src="\/figures\/humanverse.webp"/);
-  assert.match(html, /src="\/figures\/alignment.webp"/);
+  assert.match(html, /src="\/figures\/alignment.webp\?v=20261012-transparent"/);
   assert.match(html, /src="\/figures\/training.webp\?v=20261012"/);
+  assert.match(html, /href="#report-video"/);
+  assert.match(html, /id="report-video"/);
+  assert(html.indexOf('id="bibtex"') < html.indexOf('class="closing"'));
+  assert.doesNotMatch(html, /One run per scale\./);
   assert.doesNotMatch(html, /Human experience → humanoid control/);
 
   assert.doesNotMatch(html, /ICLR 2027 submission|Anonymous authors/i);

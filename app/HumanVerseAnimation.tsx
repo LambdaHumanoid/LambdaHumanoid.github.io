@@ -67,15 +67,17 @@ export function HumanVerseAnimation() {
         <img src="/figures/humanverse.webp" alt="HumanVerse-500: wearable capture setup, skill frequencies, five-ring activity distribution, and synchronized image–pose examples" width={2400} height={929} loading="lazy" aria-hidden={ready} />
         {load && <object ref={object} type="image/svg+xml" data="/figures/humanverse-animated.svg" aria-label="Animated HumanVerse-500 dataset figure" onLoad={loaded} tabIndex={-1} />}
       </div>
-      <div className="humanverse-controls" role="group" aria-label="HumanVerse animation controls" hidden={!ready || reduceMotion}>
-        <button type="button" onClick={() => {
-          if (motion.current?.complete) { replay(); return; }
-          intent.current = !playing;
-          if (playing) motion.current?.pause(); else motion.current?.play();
-        }} aria-label={playing ? "Pause dataset animation" : "Play dataset animation"}>{playing ? "Pause" : "Play"}</button>
-        <button type="button" onClick={replay} aria-label="Replay dataset animation">Replay ↻</button>
+      <div className="humanverse-meta">
+        <figcaption>HumanVerse-500 spans everyday scenes, objects, and coordinated whole-body activities.</figcaption>
+        <div className="humanverse-controls" role="group" aria-label="HumanVerse animation controls" hidden={!ready || reduceMotion}>
+          <button type="button" onClick={() => {
+            if (motion.current?.complete) { replay(); return; }
+            intent.current = !playing;
+            if (playing) motion.current?.pause(); else motion.current?.play();
+          }} aria-label={playing ? "Pause dataset animation" : "Play dataset animation"}>{playing ? "Pause" : "Play"}</button>
+          <button type="button" onClick={replay} aria-label="Replay dataset animation">Replay ↻</button>
+        </div>
       </div>
-      <figcaption>HumanVerse-500 spans everyday scenes, objects, and coordinated whole-body activities.<a href="/figures/humanverse.webp" target="_blank" rel="noreferrer">Open figure ↗</a></figcaption>
     </figure>
   );
 }

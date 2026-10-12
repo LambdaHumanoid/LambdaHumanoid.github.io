@@ -139,7 +139,7 @@ export function ScalingAnimation() {
           }} />
         <span className="scaling-phase">{progress < .72 ? `${step}k / 100k steps` : "Validation-loss trend"}</span>
       </div>
-      <figcaption>Increasing the human-data fraction lowers held-out loss and delays late-stage degradation at smaller scales.<a href="/figures/scaling.webp" target="_blank" rel="noreferrer">Open figure ↗</a></figcaption>
+      <figcaption>Increasing the human-data fraction lowers held-out loss and delays late-stage degradation at smaller scales.</figcaption>
     </figure>
   );
 }

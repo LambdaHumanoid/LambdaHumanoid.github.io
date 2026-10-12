@@ -31,7 +31,6 @@ export function HeroReport() {
       element.style.setProperty("--video-width", `${element.clientWidth + (settledWidth - element.clientWidth) * resize}px`);
       element.style.setProperty("--video-height", `${element.clientHeight + (settledHeight - element.clientHeight) * resize}px`);
       element.style.setProperty("--video-zoom", `${1.38 - .38 * resize}`);
-      element.style.setProperty("--video-blur", `${2 * (1 - reveal)}px`);
       element.style.setProperty("--video-saturation", `${.9 + .1 * reveal}`);
       element.style.setProperty("--video-opacity", "1");
       element.style.setProperty("--video-wash", `${.12 * (1 - reveal)}`);

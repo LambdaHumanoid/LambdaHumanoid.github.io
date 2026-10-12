@@ -2,7 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const SILENT_LOOP_SECONDS = 18;
+const SILENT_LOOP_START = 17;
+const SILENT_LOOP_END = 34;
+
+function keepSilentPreviewInRange(movie: HTMLVideoElement) {
+  if (movie.muted && movie.readyState && (movie.currentTime < SILENT_LOOP_START || movie.currentTime >= SILENT_LOOP_END)) {
+    movie.currentTime = SILENT_LOOP_START;
+  }
+}
 
 export function HeroReport() {
   const report = useRef<HTMLDivElement>(null);
@@ -41,7 +48,7 @@ export function HeroReport() {
       setShowSoundButton(showButton);
       if (!showButton && video.current && !video.current.muted) {
         video.current.muted = true;
-        if (video.current.currentTime >= SILENT_LOOP_SECONDS) video.current.currentTime = 0;
+        keepSilentPreviewInRange(video.current);
         setSoundOn(false);
       }
     };
@@ -61,7 +68,7 @@ export function HeroReport() {
     if (!movie) return;
     if (soundOn) {
       movie.muted = true;
-      if (movie.currentTime >= SILENT_LOOP_SECONDS) movie.currentTime = 0;
+      keepSilentPreviewInRange(movie);
       setSoundOn(false);
       return;
     }
@@ -76,7 +83,7 @@ export function HeroReport() {
       <img src="/videos/report-video-poster.jpg?v=96939befdd" alt="" />
       {/* The supplied video has subtitles burned into the picture. */}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video ref={video} autoPlay muted={!soundOn} loop={!soundOn} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=96939befdd" tabIndex={-1} aria-hidden="true" onTimeUpdate={event => { if (event.currentTarget.muted && event.currentTarget.currentTime >= SILENT_LOOP_SECONDS) event.currentTarget.currentTime = 0; }}>
+      <video ref={video} autoPlay muted={!soundOn} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=96939befdd" tabIndex={-1} aria-hidden="true" onLoadedMetadata={event => keepSilentPreviewInRange(event.currentTarget)} onTimeUpdate={event => keepSilentPreviewInRange(event.currentTarget)} onEnded={event => { if (event.currentTarget.muted) { event.currentTarget.currentTime = SILENT_LOOP_START; void event.currentTarget.play(); } }}>
         <source src="/videos/report-video.mp4?v=129775da9e" type="video/mp4" />
       </video>
       {showSoundButton && <button className={`hero-report-sound${soundOn ? " is-playing" : ""}`} type="button" onClick={toggleSound} aria-pressed={soundOn}>{soundOn ? "Mute Sound" : "Watch Video with Sound"}</button>}

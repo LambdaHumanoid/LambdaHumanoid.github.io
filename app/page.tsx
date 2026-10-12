@@ -17,13 +17,14 @@ const stages = [
   { number: "III", title: "Ground in the robot", text: "Post-train with task-aligned human and native robot demonstrations, grounding shared representations in executable humanoid actions.", detail: "Robot Post-training", color: "orange" },
 ];
 
-function PaperFigure({ name, alt, caption, width, height }: { name: string; alt: string; caption: string; width: number; height: number }) {
+function PaperFigure({ name, alt, caption, width, height, version }: { name: string; alt: string; caption: string; width: number; height: number; version?: string }) {
+  const imageUrl = `/figures/${name}.webp${version ? `?v=${version}` : ""}`;
   return (
     <figure className="paper-figure">
-      <a href={`/figures/${name}.webp`} target="_blank" rel="noreferrer" aria-label={`Open full-size figure: ${alt}`}>
+      <a href={imageUrl} target="_blank" rel="noreferrer" aria-label={`Open full-size figure: ${alt}`}>
         {/* Static, pre-compressed paper figures; preserve their native proportions. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={`/figures/${name}.webp`} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+        <img src={imageUrl} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
       </a>
       <figcaption>{caption}<span>Open figure ↗</span></figcaption>
     </figure>
@@ -94,14 +95,15 @@ export default function Home() {
         <div className="dataset-motion"><HeroMotion /></div>
           <div className="dataset-motion dataset-retargeting"><HeroMotion comparison /></div>
         <div className="modality-columns"><article><h3>Egocentric vision</h3><p>A neck-mounted GoPro records first-person RGB at a height matched to the robot camera, retaining the objects and surroundings that give actions their context.</p></article><article><h3>24 body joints</h3><p>Wearable PICO tracking captures global displacement, posture, and coordinated body motion on a synchronized timeline.</p></article><article><h3>21 joints per hand</h3><p>Image-based hand reconstruction estimates articulated hand geometry, complementing directly tracked body motion.</p></article></div>
-        <div className="data-note"><strong>Robot-Aligned Data Pipeline</strong><p>Robot-Free Capture and Hardware–Software Co-Alignment connect human demonstrations to the downstream embodiment. Observation Alignment matches camera viewpoint and visual appearance; Action-Space Alignment constructs compatible robot states and executable motion targets.</p></div>
+        <div className="data-note"><strong>Robot-Aligned Data Pipeline</strong><p>Observation alignment matches the egocentric camera to the robot view. For action-space alignment, the three steps below correct the human reference, fit a robot reference through whole-body IK and SONIC rollout, then refine motion with dynamics-aware optimization.</p></div>
+        <PaperFigure name="alignment" width={2242} height={857} alt="Three-stage alignment pipeline: human-reference alignment, robot-reference alignment, and dynamics-aware optimization" caption="The alignment pipeline turns human motion into robot-compatible motion through human-reference correction, robot-reference alignment, and dynamics-aware refinement." />
         <div className="data-note"><strong>Efficient Robot-Free Collection</strong><p>Estimated time per demo: approximately 70 s robot / 33 s human for whole-body manipulation, and 130 s robot / 25 s human for long-range loco-manipulation. Equal weighting gives approximately 100 s versus 29 s, or 3.4× collection throughput across these representative families.</p></div>
         <div className="data-note"><strong>Separate data for embodiment grounding.</strong><p>An additional 600 task-aligned human demonstrations—150 per task—are reserved for Stage III and excluded from the 500-hour mid-training pool. Sessions are split before temporal windows are constructed.</p></div>
       </section>
       <section className="content-section training-section" id="training">
         <div className="section-intro"><div><p className="section-label">The λ₀ training recipe</p><h2>From interaction priors<br />to humanoid actions.</h2></div><p>A shared vision–language backbone and action expert learn across human and robot data, while embodiment-specific interfaces preserve their different physical meanings.</p></div>
         <div className="pipeline">{stages.map(stage => <article className={`stage-card ${stage.color}`} key={stage.number}><div className="stage-topline"><span>Stage {stage.number} · {stage.detail}</span><i aria-hidden="true" /></div><h3>{stage.title}</h3><p>{stage.text}</p></article>)}</div>
-        <PaperFigure name="training" width={2400} height={757} alt="Three-stage architecture with Qwen3.5 vision-language backbone, action expert, and human and robot motion interfaces" caption="The shared model learns from human interactions, whole-body motion, and embodiment-specific demonstrations." />
+        <PaperFigure name="training" version="20261012" width={2856} height={900} alt="Updated three-stage training pipeline with egocentric hand-motion pretraining, whole-body human mid-training, and robot post-training" caption="The shared model learns from human interactions, whole-body motion, and embodiment-specific demonstrations." />
         <div className="deployment-note"><h3>At deployment</h3><p>The policy takes the robot’s camera image, language instruction, and proprioception. It predicts whole-body motion tokens and hand commands; SONIC executes the body motion. Human tracking is used during data collection, not at deployment.</p></div>
       </section>
       <section className="content-section results-section" id="evaluation">

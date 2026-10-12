@@ -66,6 +66,8 @@ test("server-renders the research project page", async () => {
   assert.match(html, /HumanVerse animation controls/);
   assert.doesNotMatch(html, /humanverse-animated\.svg/);
   assert.match(html, /src="\/figures\/humanverse.webp"/);
+  assert.match(html, /src="\/figures\/alignment.webp"/);
+  assert.match(html, /src="\/figures\/training.webp\?v=20261012"/);
   assert.doesNotMatch(html, /Human experience → humanoid control/);
 
   assert.doesNotMatch(html, /ICLR 2027 submission|Anonymous authors/i);

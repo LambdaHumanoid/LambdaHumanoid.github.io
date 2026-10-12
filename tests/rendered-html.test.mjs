@@ -60,6 +60,7 @@ test("server-renders the research project page", async () => {
   // Ignore SVG coordinates when checking obsolete names and reported scores.
   assert.doesNotMatch(html.replace(/<[^>]+>/g, " "), /EgoSoma|70\.1/);
   assert.match(html, /Evaluation results/);
+  assert.doesNotMatch(html, /StarVLA has the highest chair-placement progress/);
   assert.match(html, /Scaling animation controls/);
   assert.match(html, /Scaling animation timeline/);
   assert.match(html, /Human-data scaling: validation loss/);

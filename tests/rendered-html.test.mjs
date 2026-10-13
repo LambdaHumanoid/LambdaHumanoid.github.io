@@ -69,7 +69,7 @@ test("server-renders the research project page", async () => {
   assert.match(html, /src="\/figures\/humanverse.webp"/);
   assert.match(html, /src="\/figures\/alignment.webp\?v=20261012-alpha2"/);
   assert.match(html, /src="\/figures\/training.webp\?v=c12bc09179"/);
-  assert.match(html, /href="\/favicon.png\?v=56a6066c9b"/);
+  assert.match(html, /href="\/favicon.png\?v=7f1805b9ef"/);
   assert.doesNotMatch(html, /Open figure|Open full-size figure/);
   assert.match(html, /href="#report-video"/);
   assert.match(html, /id="report-video"/);

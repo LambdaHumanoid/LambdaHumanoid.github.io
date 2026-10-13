@@ -2,7 +2,7 @@
 
 The first viewer, **HumanVerse in motion**, sits below the dataset figure and shows
 60 selectable SMPL + MANO recordings with a chest-camera wireframe and synchronized GoPro RGB.
-The gallery covers collections `v1_0729`, `v1_0730`, `v1_0828` and `v1_0901`.
+The gallery covers collections `v1_0729`, `v1_0730`, `v1_0731`, `v1_0828` and `v1_0901`.
 The human gallery uses `public/motion/gallery.json`; the three existing G1 comparisons
 use their separate `public/motion/clips.json` manifest.
 The next row compares human motion (left) with **GMR → G1 → SONIC**

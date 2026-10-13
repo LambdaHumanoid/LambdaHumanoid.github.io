@@ -69,11 +69,12 @@ for(const name of required) {
 }
 const entry=path.join(target,'index.html');
 await fs.copyFile(path.join(root, 'public/favicon.svg'), path.join(target, 'favicon.svg'));
+await fs.copyFile(path.join(root, 'public/favicon.png'), path.join(target, 'favicon.png'));
 await fs.copyFile(path.join(root, 'public/paper.pdf'), path.join(target, 'paper.pdf'));
 await fs.copyFile(path.join(root, 'public/citations.bib'), path.join(target, 'citations.bib'));
 await fs.copyFile(path.join(root, 'public/figures/lambda-humanoid.png'), path.join(target, 'figures/lambda-humanoid.png'));
 await fs.mkdir(path.join(target, 'videos'), { recursive: true });
-for (const name of ['report-video.mp4', 'report-video-poster.jpg']) {
+for (const name of ['report-video.mp4', 'report-preview-17-34.mp4', 'report-video-poster.jpg']) {
   await fs.copyFile(path.join(root, 'public/videos', name), path.join(target, 'videos', name));
 }
 const { default: server } = await import(pathToFileURL(path.join(root, 'dist/server/index.js')).href);
@@ -91,5 +92,5 @@ for (const name of ['packed-codec.js', 'shared.js', 'page.js']) {
   try { await fs.access(path.join(offline, name)); scripts.push(`<script defer src="./offline/${name}"></script>`); } catch { /* Raw asset builds do not need packing helpers. */ }
 }
 await fs.writeFile(entry, `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1440, user-scalable=yes"><meta name="description" content="Lambda-zero learns humanoid loco-manipulation from diverse human experience and robot demonstrations."><title>λ₀: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./offline/page.css"></head><body><div id="offline-root">${fallback}</div>${scripts.join('')}</body></html>\n`);
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1440, user-scalable=yes"><meta name="description" content="Lambda-zero learns humanoid loco-manipulation from diverse human experience and robot demonstrations."><title>λ₀: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation</title><link rel="icon" href="./favicon.png?v=56a6066c9b" type="image/png"><link rel="stylesheet" href="./offline/page.css"></head><body><div id="offline-root">${fallback}</div>${scripts.join('')}</body></html>\n`);
 console.log(JSON.stringify({ target, bundleOnly, assetCount, assetMB: Math.round(assetBytes / 1024 / 1024) }));

@@ -67,15 +67,15 @@ export function HeroReport() {
   return (
     <div className="hero-report" ref={report}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/videos/report-video-poster.jpg?v=dcbcd26e8e" alt="" />
+      <img src="/videos/report-video-poster.jpg?v=1af04859c4" alt="" />
       {/* The silent preview contains no audio track. */}
-      <video autoPlay muted loop playsInline preload="auto" poster="/videos/report-video-poster.jpg?v=dcbcd26e8e" tabIndex={-1} aria-hidden="true" style={{ visibility: soundOn ? "hidden" : "visible" }}>
-        <source src="/videos/report-preview-17-34.mp4?v=7b1f529ef4" type="video/mp4" />
+      <video autoPlay muted loop playsInline preload="auto" poster="/videos/report-video-poster.jpg?v=1af04859c4" tabIndex={-1} aria-hidden="true" style={{ visibility: soundOn ? "hidden" : "visible" }}>
+        <source src="/videos/report-preview-17-34.mp4?v=7d2d54a622" type="video/mp4" />
       </video>
       {/* The supplied video has subtitles burned into the picture. */}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video ref={fullVideo} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=dcbcd26e8e" tabIndex={-1} aria-hidden="true" style={{ visibility: soundOn ? "visible" : "hidden" }} onEnded={() => setSoundOn(false)}>
-        <source src="/videos/report-video.mp4?v=129775da9e" type="video/mp4" />
+      <video ref={fullVideo} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=1af04859c4" tabIndex={-1} aria-hidden="true" style={{ visibility: soundOn ? "visible" : "hidden" }} onEnded={() => setSoundOn(false)}>
+        <source src="/videos/report-video.mp4?v=191a930ee6" type="video/mp4" />
       </video>
       {showSoundButton && <button className={`hero-report-sound${soundOn ? " is-playing" : ""}`} type="button" onClick={toggleSound} aria-pressed={soundOn}>{soundOn ? "Mute Sound" : "Watch Video with Sound"}</button>}
     </div>

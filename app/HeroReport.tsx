@@ -74,7 +74,7 @@ export function HeroReport() {
       </video>
       {/* The supplied video has subtitles burned into the picture. */}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video ref={fullVideo} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=1af04859c4" tabIndex={-1} aria-hidden="true" style={{ visibility: soundOn ? "visible" : "hidden" }} onEnded={() => setSoundOn(false)}>
+      <video ref={fullVideo} muted={!soundOn} playsInline preload="metadata" poster="/videos/report-video-poster.jpg?v=1af04859c4" tabIndex={-1} aria-hidden="true" style={{ visibility: soundOn ? "visible" : "hidden" }} onEnded={() => setSoundOn(false)}>
         <source src="/videos/report-video.mp4?v=191a930ee6" type="video/mp4" />
       </video>
       {showSoundButton && <button className={`hero-report-sound${soundOn ? " is-playing" : ""}`} type="button" onClick={toggleSound} aria-pressed={soundOn}>{soundOn ? "Mute Sound" : "Watch Video with Sound"}</button>}

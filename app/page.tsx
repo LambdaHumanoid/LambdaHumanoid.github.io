@@ -62,7 +62,7 @@ export default function Home() {
         <div className="hero-content">
           <h1><span className="hero-title">Scaling Open-World Egocentric Human Data <br />for Humanoid Loco-Manipulation</span></h1>
           <div className="hero-resources" role="group" aria-label="Research resources">
-            <a className="resource-link resource-report" href="/paper.pdf" target="_blank" rel="noreferrer"><ResourceIcon kind="report" /><span>Report</span><ResourceIcon kind="external" /></a>
+            <a className="resource-link resource-report" href="/paper.pdf?v=a25b82391c" target="_blank" rel="noreferrer"><ResourceIcon kind="report" /><span>Report</span><ResourceIcon kind="external" /></a>
             <a className="resource-link" href="https://github.com/LambdaHumanoid/openlambda" target="_blank" rel="noreferrer"><ResourceIcon kind="github" /><span>GitHub</span><ResourceIcon kind="external" /></a>
             <span className="resource-pending" aria-disabled="true"><span className="resource-huggingface" aria-hidden="true">🤗</span><span>Hugging Face</span><small>Soon</small></span>
             <a className="resource-link" href="#bibtex"><ResourceIcon kind="citation" /><span>BibTeX</span><ResourceIcon kind="chevron" /></a>
@@ -119,7 +119,7 @@ export default function Home() {
         <div className="scaling-findings"><article><h3>Two fixed holdouts</h3><p>From 5% to 100% data, minimum loss decreases by <strong>35.5%</strong> on the representative holdout and <strong>40.6%</strong> on the clean holdout. Both are disjoint from training sessions.</p></article><article><h3>Downstream task progress</h3><div className="endpoint-comparison"><div><span>No Stage II</span><strong>59.9<small>%</small></strong></div><span className="endpoint-gain">+20.5 pts</span><div><span>Full recipe</span><strong>80.4<small>%</small></strong></div></div><p>The measured real-world endpoints show a gain from Stage II. Evaluations at 5%, 10%, 25%, and 50% are pending, so intermediate-scale trends remain unestablished.</p></article></div>
       </section>
       <BibTeX />
-      <section className="closing"><p className="section-label">Explore the research</p><h2>Human motion as a foundation<br />for humanoid control.</h2><p className="closing-copy">Read the full method, evaluation protocols, and experimental findings in the manuscript.</p><a className="button primary" href="/paper.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a></section>
+      <section className="closing"><p className="section-label">Explore the research</p><h2>Human motion as a foundation<br />for humanoid control.</h2><p className="closing-copy">Read the full method, evaluation protocols, and experimental findings in the manuscript.</p><a className="button primary" href="/paper.pdf?v=a25b82391c" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a></section>
       <footer><a className="footer-brand" href="#top" aria-label="Lambda zero home"><LambdaMark /></a><a className="footer-top" href="#top">Back to top ↑</a></footer>
     </main>
   );

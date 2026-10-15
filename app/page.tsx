@@ -64,7 +64,7 @@ export default function Home() {
           <div className="hero-resources" role="group" aria-label="Research resources">
             <a className="resource-link resource-report" href="/paper.pdf?v=a25b82391c" target="_blank" rel="noreferrer"><ResourceIcon kind="report" /><span>Report</span><ResourceIcon kind="external" /></a>
             <a className="resource-link" href="https://github.com/LambdaHumanoid/openlambda" target="_blank" rel="noreferrer"><ResourceIcon kind="github" /><span>GitHub</span><ResourceIcon kind="external" /></a>
-            <span className="resource-pending" aria-disabled="true"><span className="resource-huggingface" aria-hidden="true">🤗</span><span>Hugging Face</span><small>Soon</small></span>
+            <a className="resource-link" href="https://huggingface.co/datasets/lambda-humanoid/HumanVerse-500-sample" target="_blank" rel="noreferrer"><span className="resource-huggingface" aria-hidden="true">🤗</span><span>Hugging Face</span><ResourceIcon kind="external" /></a>
             <a className="resource-link" href="#bibtex"><ResourceIcon kind="citation" /><span>BibTeX</span><ResourceIcon kind="chevron" /></a>
           </div>
           <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a><a className="button quiet" href="#report-video">Watch video <span aria-hidden="true">↓</span></a></div>

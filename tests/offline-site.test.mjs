@@ -19,7 +19,7 @@ test('offline page has local resources, nine demos, and neutral project branding
   assert.match(html, /<title>λ₀: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation<\/title>/);
   assert.doesNotMatch(html, /ICLR|Anonymous submission|Anonymous Authors|submission-badge|submission-footer/i);
   assert.doesNotMatch(html, /Video coming soon/);
-  assert.equal((html.match(/href="https:\/\/arxiv\.org\/pdf\/2610\.18950"/g) ?? []).length, 2);
+  assert.equal((html.match(/href="https:\/\/arxiv\.org\/pdf\/2610\.18950"/g) ?? []).length, 1);
   assert.equal((html.match(/class="demo-video"/g) ?? []).length, 9);
   const assets = [...html.matchAll(/(?:src|href)="(\.\/[^"?#]+)(?:\?[^"#]*)?"/g)].map(match => match[1]);
   assert(assets.length > 20);

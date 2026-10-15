@@ -15,6 +15,7 @@ const plugin = { name:'offline-page',setup(b) {
   b.onLoad({filter:/.*/,namespace:'offline'},()=>({contents:`export default class extends Worker { constructor() { const url=URL.createObjectURL(new Blob([${JSON.stringify(worker)}],{type:'text/javascript'}));super(url);this.offlineURL=url; } terminate(){super.terminate();URL.revokeObjectURL(this.offlineURL);} }`,loader:'js'}));
   b.onResolve({filter:/^offline-runtime$/},()=>({path:path.join(root,'scripts/offline-runtime.ts')}));
   b.onResolve({filter:/^offline-humanverse-svg$/},()=>({path:path.join(target,'figures/humanverse-animated.svg'),namespace:'inline-svg'}));
+  b.onResolve({filter:/teaser-animated\.svg\?raw$/},()=>({path:path.join(root,'public/figures/teaser-animated.svg'),namespace:'inline-svg'}));
   b.onLoad({filter:/.*/,namespace:'inline-svg'},async args=>({contents:`export default ${JSON.stringify(relativePaths(await fs.readFile(args.path,'utf8')))}`,loader:'js'}));
   b.onLoad({filter:/\/app\/.*\.(tsx?|json)$/},async args=> {
     let s = await fs.readFile(args.path,'utf8');
@@ -73,6 +74,8 @@ await fs.copyFile(path.join(root, 'public/favicon.png'), path.join(target, 'favi
 await fs.copyFile(path.join(root, 'public/paper.pdf'), path.join(target, 'paper.pdf'));
 await fs.copyFile(path.join(root, 'public/citations.bib'), path.join(target, 'citations.bib'));
 await fs.copyFile(path.join(root, 'public/figures/lambda-humanoid.png'), path.join(target, 'figures/lambda-humanoid.png'));
+await fs.cp(path.join(root, 'public/figures/affiliations'), path.join(target, 'figures/affiliations'), { recursive: true });
+for (const name of ['teaser.webp', 'teaser-animated.svg']) await fs.copyFile(path.join(root, 'public/figures', name), path.join(target, 'figures', name));
 await fs.mkdir(path.join(target, 'videos'), { recursive: true });
 for (const name of ['report-video.mp4', 'report-preview-17-34.mp4', 'report-video-poster.jpg']) {
   await fs.copyFile(path.join(root, 'public/videos', name), path.join(target, 'videos', name));

@@ -1,3 +1,4 @@
+import { TeaserAnimation } from "./TeaserAnimation";
 import { DemoPlayer } from "./DemoPlayer";
 import { AmbientWaves } from "./AmbientWaves";
 import { ScalingAnimation } from "./ScalingAnimation";
@@ -61,7 +62,7 @@ export default function Home() {
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
           <h1><span className="hero-title">Scaling Open-World Egocentric Human Data <br />for Humanoid Loco-Manipulation</span></h1>
-          <p className="hero-affiliation">Alibaba Token Hub and Amap, Alibaba Group</p>
+          <p className="hero-affiliation"><span className="affiliation-org">Alibaba Token Hub<img className="affiliation-logo" src="/figures/affiliations/tongyi.png" alt="Tongyi logo" width={28} height={28} /></span><span className="affiliation-and">and</span><span className="affiliation-org">Amap<img className="affiliation-logo" src="/figures/affiliations/amap.png" alt="Amap logo" width={28} height={28} /></span><span className="affiliation-group">Alibaba Group</span></p>
           <div className="hero-resources" role="group" aria-label="Research resources">
             <a className="resource-link resource-report" href="https://arxiv.org/pdf/2610.18950" target="_blank" rel="noreferrer"><ResourceIcon kind="report" /><span>Report</span><ResourceIcon kind="external" /></a>
             <a className="resource-link" href="https://github.com/LambdaHumanoid/openlambda" target="_blank" rel="noreferrer"><ResourceIcon kind="github" /><span>GitHub</span><ResourceIcon kind="external" /></a>
@@ -72,10 +73,8 @@ export default function Home() {
         </div>
       </section>
       <section className="thesis" id="overview">
-        <p className="section-label">Research overview</p>
-        <div className="thesis-grid"><h2><span>Human experience.</span><span>Whole-body intelligence.</span></h2><div><p>Diverse human activities reveal how locomotion, posture, and dexterous hand movements work together across varied scenes, objects, and interaction contexts. Stepping closer, bending to reach, and maintaining balance during contact offer rich, naturally occurring examples of whole-body coordination.</p></div></div>
-        <p className="overview-summary"><strong>λ₀ builds on diverse human experience.</strong> <strong className="overview-dataset-name">HumanVerse-500</strong> captures everyday activities through synchronized egocentric vision, body motion, and hand motion, preserving the coordination between locomotion, posture, and dexterous interaction. Our three-stage training recipe learns general whole-body priors from these human activities, then acquires manipulation-specific biases through robot demonstrations.</p>
-        <p className="overview-takeaway"><span className="overview-takeaway-label">Core idea:</span> we learn whole-body priors from diverse human data, then manipulation-specific biases from robot demonstrations.</p>
+        <div className="teaser-intro"><h2 className="section-label">Research overview</h2><p>HumanVerse-500 pairs 500 hours of human activity with whole-body motion. Alignment and three-stage training turn that experience into humanoid loco-manipulation.</p></div>
+        <TeaserAnimation />
       </section>
       <section className="content-section demos-section" id="demos">
         <div className="section-intro"><div><p className="section-label">Real-world demonstrations</p><h2>Move. Reach. Manipulate.</h2></div><p>Whole-body loco-manipulation across the laboratory, break room, and visitor center.</p></div>
@@ -120,7 +119,6 @@ export default function Home() {
         <div className="scaling-findings"><article><h3>Two fixed holdouts</h3><p>From 5% to 100% data, minimum loss decreases by <strong>35.5%</strong> on the representative holdout and <strong>40.6%</strong> on the clean holdout. Both are disjoint from training sessions.</p></article><article><h3>Downstream task progress</h3><div className="endpoint-comparison"><div><span>No Stage II</span><strong>59.9<small>%</small></strong></div><span className="endpoint-gain">+20.5 pts</span><div><span>Full recipe</span><strong>80.4<small>%</small></strong></div></div><p>Intermediate scales reach 64.2%, 67.3%, 72.1%, and 76.4% task progress at 5%, 10%, 25%, and 50% Stage-II data, respectively. Robot demonstrations and the Stage-III training budget are fixed.</p></article></div>
       </section>
       <BibTeX />
-      <section className="closing"><p className="section-label">Explore the research</p><h2>Human motion as a foundation<br />for humanoid control.</h2><p className="closing-copy">Read the full method, evaluation protocols, and experimental findings in the manuscript.</p><a className="button primary" href="https://arxiv.org/pdf/2610.18950" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a></section>
       <footer><a className="footer-brand" href="#top" aria-label="Lambda zero home"><LambdaMark /></a><a className="footer-top" href="#top">Back to top ↑</a></footer>
     </main>
   );

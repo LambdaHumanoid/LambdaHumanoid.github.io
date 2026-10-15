@@ -24,7 +24,7 @@ test("server-renders the research project page", async () => {
   const html = (await response.text()).replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
   assert.match(html, /Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation/);
   assert.match(html, /HumanVerse-500/);
-  assert.match(html, /Read the report/);
+  assert.match(html, /arxiv\.org\/pdf\/2610\.18950/);
   assert.equal((html.match(/class="demo-scene"/g) ?? []).length, 3);
   assert.equal((html.match(/class="demo-video"/g) ?? []).length, 9);
   assert(html.indexOf('id="zero-transfer"') > html.indexOf('id="demos"'));
@@ -74,7 +74,8 @@ test("server-renders the research project page", async () => {
   assert.doesNotMatch(html, /Open figure|Open full-size figure/);
   assert.match(html, /href="#report-video"/);
   assert.match(html, /id="report-video"/);
-  assert(html.indexOf('id="bibtex"') < html.indexOf('class="closing"'));
+  assert.doesNotMatch(html, /class="closing"/);
+  assert.match(html, /<details class="bibtex-details">/);
   assert.doesNotMatch(html, /One run per scale\./);
   assert.doesNotMatch(html, /Human experience → humanoid control/);
 

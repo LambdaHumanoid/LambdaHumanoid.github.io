@@ -16,7 +16,9 @@ export function BibTeX() {
   }
 
   return <section className="content-section bibtex-section" id="bibtex" aria-labelledby="bibtex-title">
-    <div className="section-intro"><h2 id="bibtex-title">BibTeX</h2><p>Cite the λ₀ report and related work using their official arXiv entries.</p></div>
+    <details className="bibtex-details">
+    <summary className="bibtex-summary"><h2 id="bibtex-title">BibTeX</h2><span className="bibtex-toggle" aria-hidden="true"><span className="bibtex-show">Show citations</span><span className="bibtex-hide">Hide citations</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="m6 9 6 6 6-6" /></svg></span></summary>
+    <p className="bibtex-intro">Cite the λ₀ report and related work using their official arXiv entries.</p>
     <div className="bibtex-panel">
       <div className="bibtex-actions">
         <button type="button" onClick={copy}>Copy all</button>
@@ -25,5 +27,6 @@ export function BibTeX() {
       </div>
       <pre role="region" tabIndex={0} aria-label="BibTeX citations"><code>{citations}</code></pre>
     </div>
+    </details>
   </section>;
 }

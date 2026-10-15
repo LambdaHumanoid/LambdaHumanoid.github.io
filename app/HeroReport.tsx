@@ -70,7 +70,7 @@ export function HeroReport() {
       <img src="/videos/report-video-poster.jpg?v=1af04859c4" alt="" />
       {/* The silent preview contains no audio track. */}
       <video autoPlay muted loop playsInline preload="auto" poster="/videos/report-video-poster.jpg?v=1af04859c4" tabIndex={-1} aria-hidden="true" style={{ visibility: soundOn ? "hidden" : "visible" }}>
-        <source src="/videos/report-preview-17-34.mp4?v=7d2d54a622" type="video/mp4" />
+        <source src="/videos/report-preview-17-34.mp4?v=e36a7e3226" type="video/mp4" />
       </video>
       {/* The supplied video has subtitles burned into the picture. */}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}

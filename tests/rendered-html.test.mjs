@@ -56,7 +56,8 @@ test("server-renders the research project page", async () => {
   assert.match(html, /80\.4/);
   assert.match(html, /62\.5/);
   assert.match(html, /59\.9/);
-  assert.match(html, /are pending/);
+  assert.doesNotMatch(html, /are pending/);
+  assert.match(html, /64\.2%, 67\.3%, 72\.1%, and 76\.4%/);
   // Ignore SVG coordinates when checking obsolete names and reported scores.
   assert.doesNotMatch(html.replace(/<[^>]+>/g, " "), /EgoSoma|70\.1/);
   assert.match(html, /Evaluation results/);

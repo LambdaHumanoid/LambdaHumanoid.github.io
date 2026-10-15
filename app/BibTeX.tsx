@@ -9,18 +9,18 @@ export function BibTeX() {
   async function copy() {
     try {
       await navigator.clipboard.writeText(citations);
-      setStatus("Copied all three citations.");
+      setStatus("Copied all four citations.");
     } catch {
       setStatus("Select the text below to copy, or download the .bib file.");
     }
   }
 
   return <section className="content-section bibtex-section" id="bibtex" aria-labelledby="bibtex-title">
-    <div className="section-intro"><h2 id="bibtex-title">BibTeX</h2><p>Cite λ₀, EgoHumanoid-V2, and EgoAlign using their official arXiv entries.</p></div>
+    <div className="section-intro"><h2 id="bibtex-title">BibTeX</h2><p>Cite the λ₀ report and related work using their official arXiv entries.</p></div>
     <div className="bibtex-panel">
       <div className="bibtex-actions">
         <button type="button" onClick={copy}>Copy all</button>
-        <a href="/citations.bib" download>Download .bib</a>
+        <a href="/citations.bib?v=35a2c0940a" download>Download .bib</a>
         <span role="status">{status}</span>
       </div>
       <pre role="region" tabIndex={0} aria-label="BibTeX citations"><code>{citations}</code></pre>

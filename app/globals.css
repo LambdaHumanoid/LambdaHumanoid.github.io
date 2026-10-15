@@ -529,3 +529,5 @@ footer { min-height: 96px; padding: 24px max(var(--page-gutter),calc((100vw - va
   .hero .hero-resources { top: calc(100% + 24px); gap: 7px; }
   .hero .hero-actions { top: calc(100% + 142px); }
 }
+
+.hero-affiliation { margin: 22px 0 0; color: #51495b; font: 500 clamp(14px, 1.5vw, 18px)/1.6 var(--sans); text-align: center; text-wrap: balance; transform: translateX(calc(-1 * var(--hero-text-shift))); text-shadow: 0 1px 8px #f6f7f5; }

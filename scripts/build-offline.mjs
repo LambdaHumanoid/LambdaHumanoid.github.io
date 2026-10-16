@@ -73,7 +73,7 @@ await fs.copyFile(path.join(root, 'public/favicon.svg'), path.join(target, 'favi
 await fs.copyFile(path.join(root, 'public/favicon.png'), path.join(target, 'favicon.png'));
 await fs.copyFile(path.join(root, 'public/paper.pdf'), path.join(target, 'paper.pdf'));
 await fs.copyFile(path.join(root, 'public/citations.bib'), path.join(target, 'citations.bib'));
-await fs.copyFile(path.join(root, 'public/figures/lambda-humanoid.png'), path.join(target, 'figures/lambda-humanoid.png'));
+await fs.copyFile(path.join(root, 'public/figures/lambda-humanoid.webp'), path.join(target, 'figures/lambda-humanoid.webp'));
 await fs.cp(path.join(root, 'public/figures/affiliations'), path.join(target, 'figures/affiliations'), { recursive: true });
 for (const name of ['teaser.webp', 'teaser-animated.svg']) await fs.copyFile(path.join(root, 'public/figures', name), path.join(target, 'figures', name));
 await fs.mkdir(path.join(target, 'videos'), { recursive: true });

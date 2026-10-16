@@ -615,10 +615,10 @@ footer { min-height: 96px; padding: 24px max(var(--page-gutter),calc((100vw - va
 
 /* Match the report's team wordmark above the institutional affiliations. */
 .hero-team { display: flex; align-items: flex-end; justify-content: center; gap: 10px; margin: 24px auto 0; color: #fff; }
-.hero-team > svg { display: block; width: 180px; height: auto; filter: drop-shadow(0 1px 3px #0008); }
+.hero-team > svg { display: block; width: 160px; height: auto; filter: drop-shadow(0 1px 3px #0008); }
 .hero-team > span { padding-bottom: 3px; font: 500 16px/1.4 var(--sans); letter-spacing: .04em; }
 .hero-team + .hero-affiliation { margin-top: 16px; }
-@media (max-width: 640px) { .hero-team { margin-top: 20px; gap: 8px; } .hero-team > svg { width: 158px; } .hero-team > span { font-size: 14px; } .hero-team + .hero-affiliation { margin-top: 14px; } }
+@media (max-width: 640px) { .hero-team { margin-top: 20px; gap: 8px; } .hero-team > svg { width: 144px; } .hero-team > span { font-size: 14px; } .hero-team + .hero-affiliation { margin-top: 14px; } }
 
 .related-citations { margin-top: 24px; }
 .related-citations > summary { padding: 12px 0; color: var(--purple); font: 600 15px/1.5 var(--sans); cursor: pointer; }

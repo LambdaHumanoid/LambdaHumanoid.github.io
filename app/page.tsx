@@ -62,6 +62,7 @@ export default function Home() {
         <span className="hero-model-mark" aria-hidden="true">λ₀</span>
         <div className="hero-content">
           <h1><span className="hero-title">Scaling Open-World Egocentric Human Data <br />for Humanoid Loco-Manipulation</span></h1>
+          <div className="hero-team" role="img" aria-label="Lambda-humanoid Team"><LambdaMark /><span aria-hidden="true">Team</span></div>
           <p className="hero-affiliation"><span className="affiliation-org">Alibaba Token Hub<img className="affiliation-logo" src="/figures/affiliations/tongyi.png" alt="Tongyi logo" width={28} height={28} /></span><span className="affiliation-and">and</span><span className="affiliation-org">Amap<img className="affiliation-logo" src="/figures/affiliations/amap.png" alt="Amap logo" width={28} height={28} /></span><span className="affiliation-group">Alibaba Group</span></p>
           <div className="hero-resources" role="group" aria-label="Research resources">
             <a className="resource-link resource-report" href="https://arxiv.org/pdf/2610.18950" target="_blank" rel="noreferrer"><ResourceIcon kind="report" /><span>Report</span><ResourceIcon kind="external" /></a>

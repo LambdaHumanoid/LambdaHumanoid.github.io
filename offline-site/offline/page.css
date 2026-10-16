@@ -69,3 +69,17 @@
 .teaser-controls { flex-shrink: 0; }
 @media (max-width: 640px) { .teaser-intro { text-align: left; } .teaser-intro > p:last-child { font-size: 15px; } .teaser-meta { align-items: flex-start; } }
 @media print { .teaser-stage { min-width: 0; } .teaser-svg, .teaser-controls { display: none; } .teaser-stage.is-ready > img { opacity: 1; } .teaser-scroll { overflow: visible; } }
+
+/* HumanVerse exploration sits beside the task and video links. */
+.hero .hero-resources { gap: 10px; }
+.hero .hero-resources > .resource-sample { gap: 8px; }
+.sample-badge { padding: 2px 7px; border-radius: 999px; background: #eee8f6; color: #594073; font: 600 10px/16px var(--sans); white-space: nowrap; }
+#humanverse-gallery { scroll-margin-top: calc(var(--header-height) + 24px); }
+@media (max-width: 640px) {
+  .hero .hero-resources { grid-template-columns: 1fr 1fr; max-width: 360px; }
+  .hero .hero-resources > a { align-self: stretch; min-height: 58px; padding-block: 8px; }
+  .hero .hero-resources > .resource-sample { flex-wrap: wrap; column-gap: 6px; row-gap: 2px; }
+  .hero .hero-resources > .resource-sample .sample-badge { flex-basis: 100%; max-width: max-content; }
+  .hero .hero-actions { gap: 4px 16px; }
+  .hero .hero-actions .button { font-size: 12px; }
+}

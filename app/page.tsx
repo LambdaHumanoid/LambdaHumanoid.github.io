@@ -66,10 +66,10 @@ export default function Home() {
           <div className="hero-resources" role="group" aria-label="Research resources">
             <a className="resource-link resource-report" href="https://arxiv.org/pdf/2610.18950" target="_blank" rel="noreferrer"><ResourceIcon kind="report" /><span>Report</span><ResourceIcon kind="external" /></a>
             <a className="resource-link" href="https://github.com/LambdaHumanoid/openlambda" target="_blank" rel="noreferrer"><ResourceIcon kind="github" /><span>GitHub</span><ResourceIcon kind="external" /></a>
-            <a className="resource-link" href="https://huggingface.co/datasets/lambda-humanoid/HumanVerse-500-sample" target="_blank" rel="noreferrer"><span className="resource-huggingface" aria-hidden="true">🤗</span><span>Hugging Face</span><ResourceIcon kind="external" /></a>
+            <a className="resource-link resource-sample" href="https://huggingface.co/datasets/lambda-humanoid/HumanVerse-500-sample" target="_blank" rel="noreferrer"><span className="resource-huggingface" aria-hidden="true">🤗</span><span>Hugging Face</span><span className="sample-badge">Sample data</span><ResourceIcon kind="external" /></a>
             <a className="resource-link" href="#bibtex"><ResourceIcon kind="citation" /><span>BibTeX</span><ResourceIcon kind="chevron" /></a>
           </div>
-          <div className="hero-actions"><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a><a className="button quiet" href="#report-video">Watch video <span aria-hidden="true">↓</span></a></div>
+          <div className="hero-actions"><a className="button quiet" href="#humanverse-gallery">Explore HumanVerse <span aria-hidden="true">↓</span></a><a className="button quiet" href="#demos">Explore the tasks <svg className="button-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a><a className="button quiet" href="#report-video">Watch video <span aria-hidden="true">↓</span></a></div>
         </div>
       </section>
       <section className="thesis" id="overview">
@@ -91,7 +91,7 @@ export default function Home() {
       <section className="content-section data-section" id="data">
         <div className="section-intro"><div><p className="section-label">HumanVerse-500</p><h2>Capture the body.<br />Keep the context.</h2></div><p>500 hours of robot-free capture across open-world scenes and tasks, pairing egocentric video with synchronized whole-body and hand motion.</p></div>
         <HumanVerseAnimation />
-        <div className="dataset-motion"><HeroMotion /></div>
+        <div className="dataset-motion" id="humanverse-gallery"><HeroMotion /></div>
           <div className="dataset-motion dataset-retargeting"><HeroMotion comparison /></div>
         <div className="modality-columns"><article><h3>Egocentric vision</h3><p>A neck-mounted GoPro records first-person RGB at a height matched to the robot camera, retaining the objects and surroundings that give actions their context.</p></article><article><h3>24 body joints</h3><p>Wearable PICO tracking captures global displacement, posture, and coordinated body motion on a synchronized timeline.</p></article><article><h3>21 joints per hand</h3><p>Image-based hand reconstruction estimates articulated hand geometry, complementing directly tracked body motion.</p></article></div>
         <div className="data-note"><strong>Robot-Aligned Data Pipeline</strong><p>Observation alignment matches the egocentric camera to the robot view. For action-space alignment, the three steps below correct the human reference, fit a robot reference through whole-body IK and SONIC rollout, then refine motion with dynamics-aware optimization.</p></div>

@@ -23,7 +23,7 @@ test("server-renders the research project page", async () => {
   // Inspect rendered markup, excluding the duplicate text in hydration payloads.
   const html = (await response.text()).replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
   assert.match(html, /Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation/);
-  assert.match(html, /HumanVerse-500/);
+  assert.match(html, /HumanVerse/);
   assert.match(html, /arxiv\.org\/pdf\/2610\.18950/);
   assert.equal((html.match(/class="demo-scene"/g) ?? []).length, 3);
   assert.equal((html.match(/class="demo-video"/g) ?? []).length, 9);
@@ -75,7 +75,7 @@ test("server-renders the research project page", async () => {
   assert.match(html, /href="#report-video"/);
   assert.match(html, /id="report-video"/);
   assert.doesNotMatch(html, /class="closing"/);
-  assert.match(html, /<details class="bibtex-details">/);
+  assert.match(html, /<details class="bibtex-details" open="">/);
   assert.doesNotMatch(html, /One run per scale\./);
   assert.doesNotMatch(html, /Human experience → humanoid control/);
 

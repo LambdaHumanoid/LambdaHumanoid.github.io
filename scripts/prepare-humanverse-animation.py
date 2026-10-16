@@ -43,7 +43,7 @@ ids["hv_524_104"].set("data-animation-role", "distribution-rings")
 svg.set("role", "img")
 svg.set("aria-labelledby", "humanverse-title humanverse-description")
 title = ET.Element(f"{{{svg_ns}}}title", id="humanverse-title")
-title.text = "HumanVerse-500: capture, activity distribution and synchronized observations"
+title.text = "HumanVerse: capture, activity distribution and synchronized observations"
 description = ET.Element(f"{{{svg_ns}}}desc", id="humanverse-description")
 description.text = ("500 hours; 32,993 episodes; 87.0 million pose frames; 827 task types; "
                     "18+ skills. Original logarithmic skill-frequency bars and independent "

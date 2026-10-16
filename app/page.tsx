@@ -14,7 +14,7 @@ import { ablations, demoScenes, results, type DemoVideo } from "./research";
 
 const stages = [
   { number: "I", title: "Learn interaction", text: "Pretrain on seven egocentric human datasets to learn object interaction and articulated hand motion across diverse activities.", detail: "Egocentric Hand-Motion Pre-training", color: "lavender" },
-  { number: "II", title: "Learn coordination", text: "Mid-train on robot-aligned whole-body human data from HumanVerse-500. The robot-aligned data pipeline converts human demonstrations into the downstream robot observation and action spaces.", detail: "Robot-Aligned Whole-body Human Mid-training", color: "purple" },
+  { number: "II", title: "Learn coordination", text: "Mid-train on robot-aligned whole-body human data from HumanVerse. The robot-aligned data pipeline converts human demonstrations into the downstream robot observation and action spaces.", detail: "Robot-Aligned Whole-body Human Mid-training", color: "purple" },
   { number: "III", title: "Ground in the robot", text: "Post-train with task-aligned human and native robot demonstrations, grounding shared representations in executable humanoid actions.", detail: "Robot Post-training", color: "orange" },
 ];
 
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
       <section className="thesis" id="overview">
-        <div className="teaser-intro"><h2 className="section-label">Research overview</h2><p>HumanVerse-500 pairs 500 hours of human activity with whole-body motion. Alignment and three-stage training turn that experience into humanoid loco-manipulation.</p></div>
+        <div className="teaser-intro"><h2 className="section-label">Research overview</h2><p>HumanVerse pairs 500 hours of human activity with whole-body motion. Alignment and three-stage training turn that experience into humanoid loco-manipulation.</p></div>
         <TeaserAnimation />
       </section>
       <section className="content-section demos-section" id="demos">
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
       <ZeroTransfer />
       <section className="content-section data-section" id="data">
-        <div className="section-intro"><div><p className="section-label">HumanVerse-500</p><h2>Capture the body.<br />Keep the context.</h2></div><p>500 hours of robot-free capture across open-world scenes and tasks, pairing egocentric video with synchronized whole-body and hand motion.</p></div>
+        <div className="section-intro"><div><p className="section-label">HumanVerse</p><h2>Capture the body.<br />Keep the context.</h2></div><p>500 hours of robot-free capture across open-world scenes and tasks, pairing egocentric video with synchronized whole-body and hand motion.</p></div>
         <HumanVerseAnimation />
         <div className="dataset-motion" id="humanverse-gallery"><HeroMotion /></div>
           <div className="dataset-motion dataset-retargeting"><HeroMotion comparison /></div>

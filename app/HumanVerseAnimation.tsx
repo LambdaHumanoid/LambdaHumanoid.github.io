@@ -64,11 +64,11 @@ export function HumanVerseAnimation() {
       <div className={`humanverse-art ${ready ? "is-ready" : ""}`}>
         {/* A complete, transparent figure is always available without JavaScript. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/figures/humanverse.webp" alt="HumanVerse-500: wearable capture setup, skill frequencies, five-ring activity distribution, and synchronized image–pose examples" width={2400} height={929} loading="lazy" aria-hidden={ready} />
-        {load && <object ref={object} type="image/svg+xml" data="/figures/humanverse-animated.svg" aria-label="Animated HumanVerse-500 dataset figure" onLoad={loaded} tabIndex={-1} />}
+        <img src="/figures/humanverse.webp" alt="HumanVerse: wearable capture setup, skill frequencies, five-ring activity distribution, and synchronized image–pose examples" width={2400} height={929} loading="lazy" aria-hidden={ready} />
+        {load && <object ref={object} type="image/svg+xml" data="/figures/humanverse-animated.svg" aria-label="Animated HumanVerse dataset figure" onLoad={loaded} tabIndex={-1} />}
       </div>
       <div className="humanverse-meta">
-        <figcaption>HumanVerse-500 spans everyday scenes, objects, and coordinated whole-body activities.</figcaption>
+        <figcaption>HumanVerse spans everyday scenes, objects, and coordinated whole-body activities.</figcaption>
         <div className="humanverse-controls" role="group" aria-label="HumanVerse animation controls" hidden={!ready || reduceMotion}>
           <button type="button" onClick={() => {
             if (motion.current?.complete) { replay(); return; }

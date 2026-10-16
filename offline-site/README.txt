@@ -1,4 +1,4 @@
-λ₀ / HumanVerse-500 project page
+λ₀ / HumanVerse project page
 
 Double-click index.html to open the interactive page in a modern browser.
 No local server, Python, npm installation, or internet connection is needed.
